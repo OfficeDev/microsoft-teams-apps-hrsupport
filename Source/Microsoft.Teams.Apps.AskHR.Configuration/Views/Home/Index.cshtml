@@ -1,0 +1,47 @@
+﻿@model Microsoft.Teams.Apps.AskHR.Configuration.Models.UsefulLinksViewModel
+@{
+    ViewBag.Title = "Configuration App";
+}
+<div class="row contentMargin">
+    <div id="spinner" style="display: none">
+        @Html.Partial("~/Views/Shared/_Spinner.cshtml", null)
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-8">
+            @Html.Partial("~/Views/Home/_Team.cshtml", new Microsoft.Teams.Apps.AskHR.Configuration.Models.TeamViewModel())
+        </div>
+    </div>
+    <div class="col-lg-12 marginBetweenView">
+        <hr />
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-8">
+            @Html.Partial("~/Views/Home/_KnowledgeBase.cshtml", new Microsoft.Teams.Apps.AskHR.Configuration.Models.KnowledgeBaseViewModel())
+        </div>
+    </div>
+    <div class="col-lg-12 marginBetweenView">
+        <hr />
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-8">
+            @Html.Partial("~/Views/Home/_WelcomeMessage.cshtml", new Microsoft.Teams.Apps.AskHR.Configuration.Models.WelcomeMessageViewModel())
+        </div>
+    </div>
+    @*<div class="col-lg-12 marginBetweenView">
+            <hr />
+        </div>*@
+    @*<div class="col-lg-12">
+            <div class="col-lg-8">
+                @Html.Partial("~/Views/Home/_HelpTab.cshtml", new Microsoft.Teams.Apps.AskHR.Configuration.Models.HelpTabViewModel())
+            </div>
+        </div>*@
+    <div class="col-lg-12 marginBetweenView">
+        <hr />
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-12">
+            @Html.Partial("~/Views/Home/_UsefulLinksTablePartial.cshtml", Model)
+        </div>
+    </div>
+</div>
+

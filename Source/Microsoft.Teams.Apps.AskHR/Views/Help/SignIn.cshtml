@@ -1,0 +1,40 @@
+﻿@using Microsoft.Teams.Apps.AskHR.Properties
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <title>@Resource.SignInTitleText</title>
+</head>
+<body>
+    <script src="~/lib/microsoft-teams/dist/MicrosoftTeams.js"></script>
+    <script src="~/lib/adal-angular/dist/adal.min.js"></script>
+    <script type="text/javascript">
+        microsoftTeams.initialize();
+		let config = {
+			clientId: "@ViewBag.clientId",
+			redirectUri: window.location.origin + "/help/signin",
+			cacheLocation: "localStorage",
+			navigateToLoginRequestUri: false
+		};
+
+		let authContext = new AuthenticationContext(config); // from the ADAL.js library
+		if (authContext.isCallback(window.location.hash)) {
+			authContext.handleWindowCallback(window.location.hash);
+			if (window.opener) {
+				if (authContext.getCachedUser()) {
+					microsoftTeams.authentication.notifySuccess();
+				}
+				else {
+					microsoftTeams.authentication.notifyFailure(authContext.getLoginError());
+				}
+			}
+		}
+		else {
+			authContext.login();
+		}
+
+    </script>
+</body>
+</html>

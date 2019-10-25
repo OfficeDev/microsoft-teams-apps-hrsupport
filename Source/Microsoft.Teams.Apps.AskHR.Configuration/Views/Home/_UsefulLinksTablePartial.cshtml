@@ -1,0 +1,160 @@
+﻿@model Microsoft.Teams.Apps.AskHR.Configuration.Models.UsefulLinksViewModel
+@{
+    string imageURL = string.Empty;
+    var index = 0;
+    var substr = string.Empty;
+    var extIndex = 0;
+    var imageName = string.Empty;
+}
+
+<br />
+<div class="tableGridHeader">Help Tiles</div>
+<div class="table tableGridSection">
+    <table class="table table-bordered table-responsive" id="helpTileTable">
+        <thead>
+            <tr>
+                <th class="titleWidth">
+                    @Html.DisplayNameFor(model => Model.HelpInfoTiles[0].Title)
+                </th>
+                <th class="descWidth">
+                    @Html.DisplayNameFor(model => Model.HelpInfoTiles[0].Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => Model.HelpInfoTiles[0].RedirectUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => Model.HelpInfoTiles[0].ImageUrl)
+                </th>
+                <th class="tagsWidth">
+                    @Html.DisplayNameFor(model => Model.HelpInfoTiles[0].Tags)
+                </th>
+                <th class="btnColWidth">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int id = 1;
+                foreach (var item in Model.HelpInfoTiles)
+                {
+                    <tr id="@Html.Raw(item.RowKey)$@item.TileOrder">
+                        <td class="tdStyle">
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td class="tdStyle">
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td class="tdStyle redirectUri">
+                            @Html.DisplayFor(modelItem => item.RedirectUrl, new { title = "Go to " + item.Title + " link" })
+                        </td>
+                        <td class="tdStyle imageDDL">
+                            <input type="hidden" value="@item.ImageUrl" id="imageURLData_@id">
+                            <div class="btn-group imageBtnDiv">
+                                <button type="button" class="btn btn-default dropdown-toggle ddlButton ddlButtonStyle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
+                                    <img alt="@item.Title" class="imageDDLStyle" src="@item.ImageUrl" id="selectedImageURL_@id">
+                                    @{
+                                        imageURL = item.ImageUrl;
+                                        index = imageURL.LastIndexOf('/');
+                                        substr = imageURL.Substring(index + 1);
+                                        extIndex = substr.LastIndexOf('.');
+                                        imageName = substr.Substring(0, extIndex);
+                                        if (imageName.Length > 10)
+                                        {
+                                            <span id="selectedImageName_@id" class="liAnchorImageTitleStyle"> @imageName.Substring(0, 9) </span>
+                                        }
+                                        else
+                                        {
+                                            <span id="selectedImageName_@id" class="liAnchorImageTitleStyle"> @imageName </span>
+                                        }
+                                    }
+                                    <span class="glyphicon glyphicon-chevron-down arrowBtnSpan"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    @{
+                                        int count = 1;
+                                        foreach (var imageModel in Model.TileImageUrls)
+                                        {
+                                            <li id="@count" title="@imageModel.ImageName" class="liStyle">
+                                                <a href="javascript:void(0);" onclick="ImageClickData(this,@id)" title="Select this image" class="liAnchorStyle">
+                                                    @{
+                                                        imageName = imageModel.ImageName;
+                                                        if (imageName.Length > 10)
+                                                        {
+                                                            <img alt="@item.Title" class="imageDDLStyle" src="@imageModel.ImageBlobUrl"> <span class="liAnchorImageTitleStyle">@imageName.Substring(0, 9)</span>
+                                                        }
+                                                        else
+                                                        {
+                                                            <img alt="@item.Title" class="imageDDLStyle" src="@imageModel.ImageBlobUrl"> <span class="liAnchorImageTitleStyle">@imageName</span>
+                                                        }
+                                                    }
+                                                </a>
+                                            </li>
+                                            count++;
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="tdStyle">
+                            @Html.DisplayFor(modelItem => item.Tags)
+                        </td>
+                        <td class="tdStyle">
+                            <button title="Edit" aria-label="Edit card @item.Title" type="button" class="btn btn-primary gridButtons editConfig">Edit</button>
+                            <button title="Delete" aria-label="Delete card @item.Title" type="button" class="btn btn-primary gridButtons deleteConfig">Delete</button>
+                        </td>
+                    </tr>
+                    id++;
+                }
+            }
+        </tbody>
+    </table>
+</div>
+<div class="addRow"> <button class="btn btn-primary gridButtonsAdd" id="addRow">Add</button></div>
+<table id="newRow" style="display:none">
+    <tbody>
+        <tr>
+            <td class="tdStyle"><input type="text" value="" maxlength="50" placeholder="Max 50 characters"></td>
+            <td class="tdStyle"><textarea type="text" value="" maxlength="200" placeholder="Max 200 characters"></textarea></td>
+            <td class="tdStyle redirectUri"><input type="text" value=""></td>
+            <td class="tdStyle imageDDL">
+                <input id="imageURLData" type="hidden" value="">
+                <div class="btn-group imageBtnDiv">
+                    <button type="button" class="btn btn-default dropdown-toggle ddlButton ddlButtonStyle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img alt="@Model.TileImageUrls.FirstOrDefault().ImageName" id="selectedImageURL" class="imageDDLStyle" src="@Model.TileImageUrls.FirstOrDefault().ImageBlobUrl">
+                        <span id="selectedImageName" class="liAnchorImageTitleStyle"> Select Image </span>
+                        <span class="glyphicon glyphicon-chevron-down arrowBtnSpan"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        @{
+                            int counter = 1;
+                            foreach (var item in Model.TileImageUrls)
+                            {
+                                <li id="@counter" title="@item.ImageName" class="liStyle">
+                                    <a href="javascript:void(0);" onclick="ImageClickData(this,null)" title="Select this image" class="liAnchorStyle">
+                                        <img alt="@item.ImageName" class="imageDDLStyle" src="@item.ImageBlobUrl">
+                                        @{
+                                            imageName = item.ImageName;
+                                            if (imageName.Length > 10)
+                                            {
+                                                <span class="liAnchorImageTitleStyle">@imageName.Substring(0, 9) </span>
+                                            }
+                                            else
+                                            {
+                                                <span class="liAnchorImageTitleStyle">@imageName </span>
+                                            }
+                                        }
+                                    </a>
+                                </li>
+                                counter++;
+                            }
+                        }
+                    </ul>
+                </div>
+            </td>
+            <td class="tdStyle"><input type="text" value="" placeholder="Comma separated tags"></td>
+            <td class="tdStyle">
+                <button title="Save" aria-label="Save Card Details" type="button" class="btn btn-primary gridButtons saveConfig">Save</button>
+                <button title="Delete" aria-label="Save Card Details" type="button" class="btn btn-primary gridButtons deleteConfig">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
