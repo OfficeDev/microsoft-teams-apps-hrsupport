@@ -1,6 +1,6 @@
 # HR Support App Template
 
-| [Documentation](https://github.com/OfficeDev/microsoft-teams-hrsupport-app/wiki/documentation/Home) | [Deployment guide](https://github.com/OfficeDev/microsoft-teams-hrsupport-app/wiki/Deployment-Guide) | [Architecture](https://github.com/OfficeDev/microsoft-teams-hrsupport-app/wiki/Solution-Overview) |
+| [Documentation](https://github.com/OfficeDev/microsoft-teams-hrsupport-app/wiki) | [Deployment guide](https://github.com/OfficeDev/microsoft-teams-hrsupport-app/wiki/Deployment-Guide) | [Architecture](https://github.com/OfficeDev/microsoft-teams-hrsupport-app/wiki/Solution-Overview) |
 | ---- | ---- | ---- |
 
 Chatbots are an easy way to provide answers to frequently asked questions by users. However, most chatbots fail to engage with users in meaningful way because there is no human in the loop when the chatbot fails. 
