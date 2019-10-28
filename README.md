@@ -1,6 +1,6 @@
 # HR Support App Template
 
-| [Documentation](/wiki/documentation.md) | [Deployment guide](/wiki/DeployementGuide) | [Architecture](/wiki/SolutionOverview) |
+| [Documentation](https://github.com/OfficeDev/microsoft-teams-hrsupport-app/wiki/documentation) | [Deployment guide](https://github.com/OfficeDev/microsoft-teams-hrsupport-app/wiki/DeployementGuide) | [Architecture](https://github.com/OfficeDev/microsoft-teams-hrsupport-app/wiki/SolutionOverview) |
 | ---- | ---- | ---- |
 
 Chatbots are an easy way to provide answers to frequently asked questions by users. However, most chatbots fail to engage with users in meaningful way because there is no human in the loop when the chatbot fails. 
@@ -27,9 +27,9 @@ Please read the license terms applicable to this template [here](https://github.
 
 ## **Getting** **Started**
 
-Begin with the [Solution overview](/wiki/SolutionOverview.md) to read about what the app does and how it works.
+Begin with the [Solution overview](https://github.com/OfficeDev/microsoft-teams-hrsupport-app/wiki/SolutionOverview) to read about what the app does and how it works.
 
-When you're ready to try out HR Support, or to use it in your own organization, follow the steps in the [Deployment guide](/wiki/DeployementGuide.md).
+When you're ready to try out HR Support, or to use it in your own organization, follow the steps in the [Deployment guide](https://github.com/OfficeDev/microsoft-teams-hrsupport-app/wiki/DeployementGuide).
 
 ## **Feedback**
 
