@@ -19,11 +19,13 @@ Experts team using HR Support:
 
 Please read the license terms applicable to this template [here](https://github.com/OfficeDev/microsoft-teams-hrsupport-app/blob/master/LICENSE). In addition to these terms, you agree to the following:
 
-- You are responsible for complying with all applicable privacy and security regulations, as well as all internal privacy and security policies of your company. You must also include your own privacy statement and terms of use for your app if you choose to deploy or share it broadly.
+- You are responsible for complying with all applicable privacy and security regulations, as well as all internal privacy and security policies of your company. You must also include your own privacy statement and terms of use for your app if you choose to deploy or share it broadly
 
-- Use and handling of any personal data collected by your app is your responsibility. Microsoft will not have any access to data collected through your app, and therefore is not responsible for any data related incidents.
+- Use and handling of any personal data collected by your app is your responsibility. Microsoft will not have any access to data collected through your app, and therefore is not responsible for any data related incidents
 
-- Any Microsoft trademarks and logos included in this repository are property of Microsoft and should not be reused, redistributed, modified, repurposed, or otherwise altered or used outside of this repository.
+- Any Microsoft trademarks and logos included in this repository are property of Microsoft and should not be reused, redistributed, modified, repurposed, or otherwise altered or used outside of this repository
+
+- This project uses images from Pixabay. For more information see [All content on Pixabay can be used for free for commercial and noncommercial use] (https://pixabay.com/service/license/)
 
 ## **Getting** **Started**
 
@@ -44,5 +46,3 @@ This project welcomes contributions and suggestions. Most contributions require 
 When you submit a pull request, a CLA-bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repos using our CLA.
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct HR Support](https://opensource.microsoft.com/codeofconduct/HR Support/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-This project uses images from Pixabay. For more information see [All content on Pixabay can be used for free for commercial and noncommercial use] (https://pixabay.com/service/license/). 
