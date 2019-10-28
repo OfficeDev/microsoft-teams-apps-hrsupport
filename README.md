@@ -1,6 +1,6 @@
 # HR Support App Template
 
-| [Documentation](/wiki/documentation.md) | [Deployment guide](/wiki/DeployementGuide.md) | [Architecture](/wiki/SolutionOverview.md) |
+| [Documentation](/wiki/documentation.md) | [Deployment guide](/wiki/DeployementGuide) | [Architecture](/wiki/SolutionOverview) |
 | ---- | ---- | ---- |
 
 Chatbots are an easy way to provide answers to frequently asked questions by users. However, most chatbots fail to engage with users in meaningful way because there is no human in the loop when the chatbot fails. 
