@@ -1,64 +1,48 @@
----
-page_type: sample
-languages:
-- csharp
-products:
-- dotnet
-description: "Add 150 character max description"
-urlFragment: "update-this-to-unique-url-stub"
----
+# HR Support App Template
 
-# Official Microsoft Sample
+| [Documentation](/wiki/documentation.md) | [Deployment guide](/wiki/DeployementGuide.md) | [Architecture](/wiki/SolutionOverview.md) |
+| ---- | ---- | ---- |
 
-<!-- 
-Guidelines on README format: https://review.docs.microsoft.com/help/onboard/admin/samples/concepts/readme-template?branch=master
+Chatbots are an easy way to provide answers to frequently asked questions by users. However, most chatbots fail to engage with users in meaningful way because there is no human in the loop when the chatbot fails. 
 
-Guidance on onboarding samples to docs.microsoft.com/samples: https://review.docs.microsoft.com/help/onboard/admin/samples/process/onboarding?branch=master
+HR Support bot is a friendly Q&A bot that brings an executive from the HR team in the loop when it is unable to help. One can ask the bot a question and the bot responds with an answer if it is contained in the knowledge base. If not, the bot allows the user to submit a query which then gets posted in a pre-configured team of experts who are help to provide support by acting upon the notifications from within their team itself. Additionally, the bot suggests links to recommended HR policies/questions by searching for pre-configured tags in the question. These tiles can also be found in the associated tab as a quick reference.
+HR Support works well for light weight QnA and to provide quick support when launching new projects/initiatives in the organization.
 
-Taxonomies for products and languages: https://review.docs.microsoft.com/new-hope/information-architecture/metadata/taxonomies?branch=master
--->
+An end-user interacting with HR Support:
+![End-user interaction](https://github.com/OfficeDev/microsoft-teams-hrsupport-app/wiki/images/EndUser.png)
 
-Give a short description for your sample here. What does it do and why is it important?
+Experts team using HR Support:
+![Expert interaction](https://github.com/OfficeDev/microsoft-teams-hrsupport-app/wiki/images/Expert_User.png)
 
-## Contents
 
-Outline the file contents of the repository. It helps users navigate the codebase, build configuration and any related assets.
+## **Legal Notices**
 
-| File/folder       | Description                                |
-|-------------------|--------------------------------------------|
-| `src`             | Sample source code.                        |
-| `.gitignore`      | Define what to ignore at commit time.      |
-| `CHANGELOG.md`    | List of changes to the sample.             |
-| `CONTRIBUTING.md` | Guidelines for contributing to the sample. |
-| `README.md`       | This README file.                          |
-| `LICENSE`         | The license for the sample.                |
+Please read the license terms applicable to this template [here](https://github.com/OfficeDev/microsoft-teams-hrsupport-app/blob/master/LICENSE). In addition to these terms, you agree to the following:
 
-## Prerequisites
+- You are responsible for complying with all applicable privacy and security regulations, as well as all internal privacy and security policies of your company. You must also include your own privacy statement and terms of use for your app if you choose to deploy or share it broadly.
 
-Outline the required components and tools that a user might need to have on their machine in order to run the sample. This can be anything from frameworks, SDKs, OS versions or IDE releases.
+- Use and handling of any personal data collected by your app is your responsibility. Microsoft will not have any access to data collected through your app, and therefore is not responsible for any data related incidents.
 
-## Setup
+- Any Microsoft trademarks and logos included in this repository are property of Microsoft and should not be reused, redistributed, modified, repurposed, or otherwise altered or used outside of this repository.
 
-Explain how to prepare the sample once the user clones or downloads the repository. The section should outline every step necessary to install dependencies and set up any settings (for example, API keys and output folders).
+## **Getting** **Started**
 
-## Runnning the sample
+Begin with the [Solution overview](/wiki/SolutionOverview.md) to read about what the app does and how it works.
 
-Outline step-by-step instructions to execute the sample and see its output. Include steps for executing the sample from the IDE, starting specific services in the Azure portal or anything related to the overall launch of the code.
+When you're ready to try out HR Support, or to use it in your own organization, follow the steps in the [Deployment guide](/wiki/DeployementGuide.md).
 
-## Key concepts
+## **Feedback**
 
-Provide users with more context on the tools and services used in the sample. Explain some of the code that is being used and how services interact with each other.
+Thoughts? Questions? Ideas? Share them with us on [Teams UserVoice](https://microsoftteams.uservoice.com/forums/555103-public)!
 
-## Contributing
+Please report bugs and other code issues [here](/issues/new).
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+## **Contributing**
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit [https://cla.microsoft.com](https://cla.microsoft.com/).
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+When you submit a pull request, a CLA-bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repos using our CLA.
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct HR Support](https://opensource.microsoft.com/codeofconduct/HR Support/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
+This project uses images from Pixabay. For more information see [All content on Pixabay can be used for free for commercial and noncommercial use] (https://pixabay.com/service/license/). 

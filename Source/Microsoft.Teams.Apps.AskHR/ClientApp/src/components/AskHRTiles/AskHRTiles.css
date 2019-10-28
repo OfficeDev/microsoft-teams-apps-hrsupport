@@ -1,0 +1,21 @@
+.noDataDiv {
+    text-align: center;
+    font-weight: bold;
+    margin-left: 25%;
+    width: 50%;
+    color: #666666;
+    font-size: 25px;
+    height: 100px;
+    margin-top: 190px;
+    font-family: 'Segoe UI' 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.theme-dark .noDataDiv{
+    color:white;
+}
+
+.theme-contrast .noDataDiv {
+    color: white;
+}
+
+

@@ -1,0 +1,258 @@
+﻿.font-bold {
+    font-weight: 700;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.success-message {
+    color: green;
+    margin-top: 10px;
+}
+
+.storageStatusIcon-success {
+    color: green;
+    margin-top: 9px;
+}
+
+.storageStatusIcon-failure {
+    color: red;
+    margin-top: 9px;
+}
+
+.marginBetweenView {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.contentMargin {
+    padding-top: 100px;
+}
+
+.mandatoryField {
+    color: red;
+}
+
+.col-lg-1 {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    width: 4% !important;
+}
+
+.col-lg-3 {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    width: 22% !important;
+}
+
+.col-lg-5 {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.col-lg-offset-3 {
+    margin-left: 22% !important;
+}
+
+label {
+    margin-top: 9px !important;
+}
+
+.infoSignMargin {
+    padding-left: 10px;
+}
+
+.helpTabTextNote {
+    margin-right: 15px;
+}
+
+.addRow {
+    margin-top: 15px;
+}
+
+.gridButtons {
+    width: 70px;
+}
+
+.gridButtonsAdd {
+    width: 65px;
+}
+
+.tdStyle {
+    word-break: break-all;
+}
+
+.redirectUri {
+    width: 20%;
+}
+
+.btnColWidth {
+    width: 15% !important;
+    text-align: center;
+}
+
+.mandatory {
+    border-color: red !important;
+}
+
+.titleWidth {
+    width: 68px !important;
+}
+
+.descWidth {
+    width: 90px !important;
+}
+
+.tagsWidth {
+    width: 68px !important;
+}
+
+.imageDDLStyle {
+    margin-right: 20px;
+    width: 26%;
+    float: left;
+    height: 26px;
+    margin-bottom: 2px;
+}
+
+.liStyle {
+    width: 100%;
+    height: 32px;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+    .liStyle:hover {
+        box-shadow: 0px 0px 1px 1px #99ccff;
+        transform: scale(1.5);
+    }
+
+.liAnchorStyle {
+    width: 100%;
+}
+
+.liAnchorImageStyle {
+    width: 20%;
+}
+
+.liAnchorImageTitleStyle {
+    width: 60%;
+}
+
+.arrowBtnSpan {
+    width: 9%;
+    float: right;
+}
+
+.toggleToEditButton {
+    width: 40% !important;
+}
+
+input {
+    width: 100% !important;
+}
+
+.imageDDL {
+    width: 23%;
+}
+
+.ddlButtonStyle {
+    width: 100% !important;
+}
+
+/* Images Dropdown list styling */
+body {
+    padding: 40px;
+}
+
+.dropdown-toggle, .dropdown-menu {
+    width: 100%;
+}
+
+.btn-group img {
+    margin-right: 10px
+}
+
+.imageBtnDiv {
+    width: 100%;
+}
+
+.dropdown-toggle {
+    padding-right: 50px
+}
+
+    .dropdown-toggle .glyphicon {
+        margin-left: 20px;
+        margin-right: -40px
+    }
+
+.dropdown-menu > li > a:hover {
+    background: #f1f9fd;
+    /*cursor:pointer;*/
+}
+/* $search-blue */
+.dropdown-header {
+    background: #ccc;
+    font-size: 14px;
+    font-weight: 700;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 5px
+}
+
+.tableGridSection {
+    border-radius: 4px;
+}
+
+.noDataMessage {
+    font-size: 18px;
+    margin-left: 25%;
+    font-weight: bold;
+}
+
+.redirectUri a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+.formToSubmit div.form-group div.col-lg-1 {
+    text-align: center;
+}
+
+#helpTileTable textarea {
+    resize: vertical;
+    width: 97%;
+}
+
+.tableGridHeader {
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 3px;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+#WelcomeMessage {
+    width: 303.141px !important;
+    min-height: 78px;
+}
+
+.ui-wrapper {
+    width: 303.141px !important;
+}
+
+.ui-icon {
+    width: 11px !important;
+}

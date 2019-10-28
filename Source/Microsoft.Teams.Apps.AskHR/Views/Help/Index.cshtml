@@ -1,0 +1,101 @@
+﻿@using Microsoft.Teams.Apps.AskHR.Properties
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <title>AskHR Help</title>
+
+    <script src="~/lib/microsoft-teams/dist/MicrosoftTeams.js"></script>
+    <script src="~/lib/adal-angular/dist/adal.min.js"></script>
+    <script type="text/javascript">
+		let upn = undefined;
+
+		let config = {
+			clientId: "@ViewBag.clientId",
+			redirectUri: window.location.origin + "/help/signin",
+			cacheLocation: "localStorage",
+			navigateToLoginRequestUri: false
+		};
+
+        function initialize() {
+			microsoftTeams.initialize();
+			microsoftTeams.getContext(function (context) {
+				this.upn = context.upn;
+				getAuthData();
+			})
+        }
+
+        function getAuthData() {
+			if (this.upn) {
+				config.extraQueryParameters = "scope=openid+profile&login_hint=" + encodeURIComponent(this.upn);
+			} else {
+				config.extraQueryParameters = "scope=openid+profile";
+			}
+			let authContext = new AuthenticationContext(config); // from the ADAL.js library
+			// See if there's a cached user and it matches the expected user
+			let user = authContext.getCachedUser();
+			if (user) {
+				if (user.profile.upn !== this.upn) {
+					// User doesn't match, clear the cache
+					authContext.clearCache();
+				}
+            }
+			// Get the id token (which is the access token for resource = clientId)
+			let token = authContext.getCachedToken(config.clientId);
+			if (token) {
+				document.getElementById("root").style.display = "block";
+				document.getElementById("signInSection").style.display = "none";
+			} else {
+				// No token, or token is expired
+				authContext._renewIdToken(function (err, idToken) {
+					if (err) {
+						console.log("Renewal failed: " + err);
+						// Failed to get the token silently; show the login button
+						showLoginButton();
+					} else {
+						showDataGrid();
+					}
+				});
+			}
+        }
+
+        function showLoginButton() {
+            document.getElementById("root").style.display = "none !important";
+            document.getElementById("signInSection").style.display = "block";
+		}
+
+        function showDataGrid() {
+			document.getElementById("signInSection").style.display = "none";
+            window.location.href = window.location.origin + "/help/RenderData";
+		}
+
+        function login() {
+			microsoftTeams.authentication.authenticate({
+				url: window.location.origin + "/help/signin",
+				width: 600,
+				height: 535,
+                successCallback: function (result) {
+					showDataGrid();
+				},
+				failureCallback: function (reason) {
+					showLoginButton();
+				}
+			});
+		}
+    </script>
+</head>
+<body onload="initialize()">
+    <div class="loginSection" id="signInSection" style="display:none">
+        <img src="~/Content/HRSupportLoginImage.png" class="askHRLogoImg" alt="ask HR Logo"/>
+        <div class="loginText">@Resource.loginText</div>
+        <div class="askHRAppDescription">@Resource.askHRAppDescription</div>
+        <input class="loginBtn" title="@Resource.LoginButtonTitleText" type="button" id="btnLogin" value="@Resource.LoginButtonText" onclick="login()" />
+    </div>
+
+    <div id="root" style="display:none">
+    </div>
+    <script src="~/dist/bundle.js" asp-append-version="true"></script>
+</body>
+</html>
