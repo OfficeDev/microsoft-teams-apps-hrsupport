@@ -9,10 +9,10 @@ HR Support bot is a friendly Q&A bot that brings an executive from the HR team i
 HR Support works well for light weight QnA and to provide quick support when launching new projects/initiatives in the organization.
 
 An end-user interacting with HR Support:
-![End-user interaction](https://github.com/OfficeDev/microsoft-teams-hrsupport-app/wiki/images/EndUser.png)
+![End-user interaction](https://github.com/OfficeDev/microsoft-teams-hrsupport-app/wiki/images/end-user.png)
 
 Experts team using HR Support:
-![Expert interaction](https://github.com/OfficeDev/microsoft-teams-hrsupport-app/wiki/images/Expert_User.png)
+![Expert interaction](https://github.com/OfficeDev/microsoft-teams-hrsupport-app/wiki/images/expert-user.png)
 
 
 ## **Legal Notices**
