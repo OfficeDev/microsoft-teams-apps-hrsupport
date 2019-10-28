@@ -35,7 +35,7 @@ When you're ready to try out HR Support, or to use it in your own organization, 
 
 Thoughts? Questions? Ideas? Share them with us on [Teams UserVoice](https://microsoftteams.uservoice.com/forums/555103-public)!
 
-Please report bugs and other code issues [here](/issues/new).
+Please report bugs and other code issues [here](https://github.com/OfficeDev/microsoft-teams-hrsupport-app/issues/new).
 
 ## **Contributing**
 
