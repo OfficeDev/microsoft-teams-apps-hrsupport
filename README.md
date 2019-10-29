@@ -25,7 +25,7 @@ Please read the license terms applicable to this template [here](https://github.
 
 - Any Microsoft trademarks and logos included in this repository are property of Microsoft and should not be reused, redistributed, modified, repurposed, or otherwise altered or used outside of this repository
 
-- This project uses images from Pixabay. For more information see [All content on Pixabay can be used for free for commercial and noncommercial use] (https://pixabay.com/service/license/)
+- This project uses images from Pixabay. For more information see [All content on Pixabay can be used for free for commercial and noncommercial use](https://pixabay.com/service/license/)
 
 ## **Getting** **Started**
 
