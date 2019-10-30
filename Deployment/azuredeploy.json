@@ -42,7 +42,7 @@
     "appDisplayName": {
       "type": "string",
       "minLength": 1,
-      "defaultValue": "Ask HR",
+      "defaultValue": "HR Support",
       "metadata": {
         "description": "The app (and bot) display name."
       }
@@ -278,6 +278,10 @@
             {
               "name": "SearchIndexingIntervalInMinutes",
               "value": "10"
+            },
+             {
+              "name": "WEBSITE_NODE_DEFAULT_VERSION",
+              "value": "10.15.2"
             }
           ]
         }
