@@ -227,8 +227,8 @@ namespace Microsoft.Teams.Apps.AskHR.Common.Providers
                 PublicAccess = BlobContainerPublicAccessType.Container,
             };
 
-            await this.helpInfoImageCloudBlobContainer.SetPermissionsAsync(permissions);
             await this.helpInfoImageCloudBlobContainer.CreateIfNotExistsAsync();
+            await this.helpInfoImageCloudBlobContainer.SetPermissionsAsync(permissions);
         }
 
         /// <summary>
