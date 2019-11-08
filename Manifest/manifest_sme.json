@@ -2,7 +2,7 @@
   "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
   "manifestVersion": "1.5",
   "version": "1.0.0",
-  "id": "187ed479-726e-4824-83c9-3f6f8248e594",
+  "id": "db78fc48-4a08-42fd-9bd9-59fa50d4b2d3",
   "packageName": "com.microsoft.teams.hrsupport.experts",
   "developer": {
     "name": "<<companyName>>",
