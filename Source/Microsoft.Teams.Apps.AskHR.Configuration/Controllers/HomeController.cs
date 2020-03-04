@@ -5,9 +5,9 @@
 namespace Microsoft.Teams.Apps.AskHR.Configuration.Controllers
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
     using System.Net;
+    using System.Text.RegularExpressions;
     using System.Threading.Tasks;
     using System.Web;
     using System.Web.Mvc;
@@ -20,7 +20,6 @@ namespace Microsoft.Teams.Apps.AskHR.Configuration.Controllers
     using Microsoft.Teams.Apps.AskHR.Common.Providers;
     using Microsoft.Teams.Apps.AskHR.Configuration.Models;
     using Microsoft.Teams.Apps.AskHR.Configuration.Resources;
-    using Microsoft.WindowsAzure.Storage.Table;
 
     /// <summary>
     /// Home Controller
@@ -28,10 +27,6 @@ namespace Microsoft.Teams.Apps.AskHR.Configuration.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        private const string TeamIdEscapedStartString = "19%3a";
-        private const string TeamIdEscapedEndString = "%40thread.skype";
-        private const string TeamIdUnescapedStartString = "19:";
-        private const string TeamIdUnescapedEndString = "@thread.skype";
         private static int tileOrder;
 
         private readonly IConfigurationProvider configurationProvider;
@@ -44,9 +39,10 @@ namespace Microsoft.Teams.Apps.AskHR.Configuration.Controllers
         /// Initializes a new instance of the <see cref="HomeController"/> class.
         /// </summary>
         /// <param name="configurationProvider">configurationProvider DI.</param>
+        /// <param name="helpDataProvider">help content data provider instance.</param>
         /// <param name="qnaMakerClient">qnaMakerClient DI.</param>
-        public HomeController(IConfigurationProvider configurationProvider, IHelpDataProvider helpDataProvider,
-            IQnAMakerClient qnaMakerClient, TelemetryClient telemetryClient)
+        /// <param name="telemetryClient">telemetry client to trace logs.</param>
+        public HomeController(IConfigurationProvider configurationProvider, IHelpDataProvider helpDataProvider, IQnAMakerClient qnaMakerClient, TelemetryClient telemetryClient)
         {
             this.configurationProvider = configurationProvider;
             this.qnaMakerClient = qnaMakerClient;
@@ -276,24 +272,17 @@ namespace Microsoft.Teams.Apps.AskHR.Configuration.Controllers
         /// <returns>team Id as string</returns>
         private string ParseTeamIdFromDeepLink(string teamIdDeepLink)
         {
-            int startEscapedIndex = teamIdDeepLink.IndexOf(TeamIdEscapedStartString, StringComparison.OrdinalIgnoreCase);
-            int endEscapedIndex = teamIdDeepLink.IndexOf(TeamIdEscapedEndString, StringComparison.OrdinalIgnoreCase);
+            // team id regex match
+            // for a pattern like https://teams.microsoft.com/l/team/19%3a64c719819fb1412db8a28fd4a30b581a%40thread.tacv2/conversations?groupId=53b4782c-7c98-4449-993a-441870d10af9&tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47
+            // regex checks for 19%3a64c719819fb1412db8a28fd4a30b581a%40thread.tacv2
+            var match = Regex.Match(teamIdDeepLink, @"teams.microsoft.com/l/team/(\S+)/");
 
-            int startUnescapedIndex = teamIdDeepLink.IndexOf(TeamIdUnescapedStartString, StringComparison.OrdinalIgnoreCase);
-            int endUnescapedIndex = teamIdDeepLink.IndexOf(TeamIdUnescapedEndString, StringComparison.OrdinalIgnoreCase);
-
-            string teamID = string.Empty;
-
-            if (startEscapedIndex > -1 && endEscapedIndex > -1)
+            if (!match.Success)
             {
-                teamID = HttpUtility.UrlDecode(teamIdDeepLink.Substring(startEscapedIndex, endEscapedIndex - startEscapedIndex + TeamIdEscapedEndString.Length));
-            }
-            else if (startUnescapedIndex > -1 && endUnescapedIndex > -1)
-            {
-                teamID = teamIdDeepLink.Substring(startUnescapedIndex, endUnescapedIndex - startUnescapedIndex + TeamIdUnescapedEndString.Length);
+                return string.Empty;
             }
 
-            return teamID;
+            return HttpUtility.UrlDecode(match.Groups[1].Value);
         }
 
         /// <summary>
