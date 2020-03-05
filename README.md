@@ -14,22 +14,17 @@ An end-user interacting with HR Support:
 Experts team using HR Support:
 ![Expert interaction](https://github.com/OfficeDev/microsoft-teams-hrsupport-app/wiki/images/expert-user.png)
 
+## Legal Notice
+Please read the license terms applicable to this app template [here](https://github.com/OfficeDev/microsoft-teams-hrsupport-app/blob/master/LICENSE). In addition to these terms, by using this app template you agree to the following:
 
-## **Legal Notices**
+* You are responsible for complying with applicable privacy and security regulations related to use, collection and handling of any personal data by your app.  This includes complying with all internal privacy and security policies of your organization if your app is developed to be sideloaded internally within your organization.
 
-Please read the license terms applicable to this template [here](https://github.com/OfficeDev/microsoft-teams-hrsupport-app/blob/master/LICENSE). In addition to these terms, you agree to the following:
+* Microsoft will have no access to data collected through your app.  Microsoft will not be responsible for any data related incidents or data subject requests.
 
- - You are responsible for complying with privacy and security regulations applicable to your app.
- 
- - Use, collection, and handling of any personal data by your app is your responsibility alone.  Microsoft will not have any access to data collected through your app.  Microsoft will not responsible for any data related incidents or data subject requests.
- 
- - If your app is developed to be sideloaded internally within your organization, you agree to comply with all internal privacy and security policies of your organization.
- 
- - Use of this template does not guarantee acceptance of your app to Teams app store.  To make this app available in the Teams app store, you will have to comply with [submission process and validation](https://docs.microsoft.com/en-us/microsoftteams/platform/concepts/deploy-and-publish/appsource/publish), and all associated requirements such as including your own privacy statement and terms of use for your app.
- 
- - Any Microsoft trademarks and logos included in this repository are property of Microsoft and should not be reused, redistributed, modified, repurposed, or otherwise altered or used outside of this repository.
+* Any trademarks or registered trademarks of Microsoft in the United States and/or other countries and logos included in this repository are the property of Microsoft, and the license for this project does not grant you rights to use any Microsoft names, logos or trademarks outside of this repository.  Microsoft’s general trademark guidelines can be found [here](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general.aspx)
 
-- This project uses images from Pixabay. For more information see [All content on Pixabay can be used for free for commercial and noncommercial use](https://pixabay.com/service/license/)
+* Use of this template does not guarantee acceptance of your app to the Teams app store.  To make this app available in the Teams app store, you will have to comply with [submission process and validation](https://docs.microsoft.com/en-us/microsoftteams/platform/concepts/deploy-and-publish/appsource/publish), and all associated requirements such as including your own privacy statement and terms of use for your app. 
+
 
 ## **Getting** **Started**
 
