@@ -6,6 +6,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using AdaptiveCards;
     using Microsoft.Bot.Schema;
     using Microsoft.Bot.Schema.Teams;
@@ -27,6 +28,8 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
         /// <returns>Sme facing feedback notification card.</returns>
         public static Attachment GetCard(ShareFeedbackCardPayload data, TeamsChannelAccount userDetails)
         {
+            var textAlignment = CultureInfo.CurrentCulture.TextInfo.IsRightToLeft ? AdaptiveHorizontalAlignment.Right : AdaptiveHorizontalAlignment.Left;
+
             // Constructing adaptive card that is sent to SME team.
             AdaptiveCard smeFeedbackCard = new AdaptiveCard("1.0")
             {
@@ -37,30 +40,34 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                        Text = Resource.SMEFeedbackHeaderText,
                        Weight = AdaptiveTextWeight.Bolder,
                        Size = AdaptiveTextSize.Medium,
+                       HorizontalAlignment = textAlignment
                    },
                    new AdaptiveTextBlock()
                    {
-                       Text = string.Format(Resource.FeedbackAlertText, userDetails.Name),
+                       Text = string.Format(CultureInfo.InvariantCulture, Resource.FeedbackAlertText, userDetails.Name),
                        Wrap = true,
+                       HorizontalAlignment = textAlignment
                    },
                    new AdaptiveTextBlock()
                    {
                        Text = Resource.RatingTitle,
                        Weight = AdaptiveTextWeight.Bolder,
                        Wrap = true,
+                       HorizontalAlignment = textAlignment
                    },
                    new AdaptiveTextBlock()
                    {
                        Text = GetRatingDisplayText(data.Rating),
                        Spacing = AdaptiveSpacing.None,
                        Wrap = true,
+                       HorizontalAlignment = textAlignment
                    },
                },
                Actions = new List<AdaptiveAction>
                {
                    new AdaptiveOpenUrlAction
                    {
-                       Title = string.Format(Resource.ChatTextButton, userDetails.GivenName),
+                       Title = string.Format(CultureInfo.InvariantCulture, Resource.ChatTextButton, userDetails.GivenName),
                        UrlString = $"https://teams.microsoft.com/l/chat/0/0?users={Uri.EscapeDataString(userDetails.UserPrincipalName)}"
                    }
                }
@@ -74,12 +81,14 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                     Text = Resource.DescriptionText,
                     Weight = AdaptiveTextWeight.Bolder,
                     Wrap = true,
+                    HorizontalAlignment = textAlignment
                 });
                 smeFeedbackCard.Body.Add(new AdaptiveTextBlock()
                 {
                     Text = CardHelper.TruncateStringIfLonger(data.Description, CardHelper.DescriptionMaxDisplayLength),
                     Spacing = AdaptiveSpacing.None,
                     Wrap = true,
+                    HorizontalAlignment = textAlignment
                 });
             }
 
@@ -109,7 +118,8 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                                new AdaptiveTextBlock
                                {
                                    Text = CardHelper.TruncateStringIfLonger(data.KnowledgeBaseAnswer, CardHelper.KnowledgeBaseAnswerMaxDisplayLength),
-                                   Wrap = true
+                                   Wrap = true,
+                                   HorizontalAlignment = textAlignment
                                }
                             }
                         }
@@ -132,7 +142,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                 throw new ArgumentException($"{rating} is not a valid rating value", nameof(rating));
             }
 
-            return Resource.ResourceManager.GetString($"{rating}RatingText");
+            return Resource.ResourceManager.GetString($"{rating}RatingText", CultureInfo.CurrentCulture);
         }
     }
 }

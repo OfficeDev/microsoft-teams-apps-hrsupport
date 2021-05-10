@@ -10,14 +10,14 @@ class AskHR extends Component {
             <React.Fragment>
                 <a onClick={this.props.handleTelemetry} href={this.props.AskHRData.redirectUrl} aria-label={"open " + this.props.AskHRData.title + " tile"} target="_blank">
                         <div className="tile">
-                            <div className="title">
+                        <div className={[this.props.cultureInfo ? "rtlTextAlign":"ltrTextAlign", "title"].join(" ")}>
                                 {this.props.AskHRData.title}
                             </div>
                         <div className="imageAskHRDiv">
                             <img title={this.props.AskHRData.title} className="imageAskHR" src={this.props.AskHRData.imageUrl} alt={this.props.AskHRData.title} />
                             </div>
                             <div className="descDiv">
-                                <div title={this.props.AskHRData.description} className="description">
+                                <div title={this.props.AskHRData.description} className={[this.props.cultureInfo ? "rtlTextAlign":"ltrTextAlign", "description"].join(" ")}>
                                      {this.props.AskHRData.description}
                                 </div>
                             </div>

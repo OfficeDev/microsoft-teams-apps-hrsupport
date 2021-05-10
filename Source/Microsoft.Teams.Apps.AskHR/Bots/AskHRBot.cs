@@ -6,6 +6,7 @@ namespace Microsoft.Teams.Apps.AskHR.Bots
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
@@ -238,48 +239,46 @@ namespace Microsoft.Teams.Apps.AskHR.Bots
 
             string text = (message.Text ?? string.Empty).Trim().ToLower();
 
-            switch (text)
+            if (text.Equals(Resource.ResourceManager.GetString("AskAnExpertDisplayText", CultureInfo.CurrentCulture), StringComparison.InvariantCultureIgnoreCase))
             {
-                case AskAnExpert:
-                    this.telemetryClient.TrackTrace("Sending user ask an expert card");
-                    await turnContext.SendActivityAsync(MessageFactory.Attachment(AskAnExpertCard.GetCard()));
-                    break;
-
-                case ShareFeedback:
-                    this.telemetryClient.TrackTrace("Sending user feedback card");
-                    await turnContext.SendActivityAsync(MessageFactory.Attachment(ShareFeedbackCard.GetCard()));
-                    break;
-
-                case TakeATour:
-                    this.telemetryClient.TrackTrace("Sending user tour card");
-                    var userTourCards = TourCarousel.GetUserTourCards(this.appBaseUri);
-                    await turnContext.SendActivityAsync(MessageFactory.Carousel(userTourCards));
-                    break;
-
-                default:
-                    this.telemetryClient.TrackTrace("Sending input to QnAMaker");
-                    var queryResult = await this.GetAnswerFromQnAMakerAsync(text, turnContext, cancellationToken);
-                    if (queryResult != null)
+                this.telemetryClient.TrackTrace("Sending user ask an expert card");
+                await turnContext.SendActivityAsync(MessageFactory.Attachment(AskAnExpertCard.GetCard()));
+            }
+            else if (text.Equals(Resource.ResourceManager.GetString("ShareFeedbackDisplayText", CultureInfo.CurrentCulture), StringComparison.InvariantCultureIgnoreCase))
+            {
+                this.telemetryClient.TrackTrace("Sending user feedback card");
+                await turnContext.SendActivityAsync(MessageFactory.Attachment(ShareFeedbackCard.GetCard()));
+            }
+            else if (text.Equals(Resource.ResourceManager.GetString("TakeATourButtonText", CultureInfo.CurrentCulture), StringComparison.InvariantCultureIgnoreCase) ||
+                text.Equals(Resource.ResourceManager.GetString("TakeATourButtonText", CultureInfo.InvariantCulture), StringComparison.InvariantCultureIgnoreCase))
+            {
+                this.telemetryClient.TrackTrace("Sending user tour card");
+                var userTourCards = TourCarousel.GetUserTourCards(this.appBaseUri);
+                await turnContext.SendActivityAsync(MessageFactory.Carousel(userTourCards));
+            }
+            else
+            {
+                this.telemetryClient.TrackTrace("Sending input to QnAMaker");
+                var queryResult = await this.GetAnswerFromQnAMakerAsync(text, turnContext, cancellationToken);
+                if (queryResult != null)
+                {
+                    this.telemetryClient.TrackTrace("Sending user QnAMaker card");
+                    await turnContext.SendActivityAsync(MessageFactory.Attachment(ResponseCard.GetCard(queryResult.Questions[0], queryResult.Answer, text)));
+                }
+                else
+                {
+                    var tileList = await this.MatchTagsWithMessageAsync(text);
+                    if (tileList != null)
                     {
-                        this.telemetryClient.TrackTrace("Sending user QnAMaker card");
-                        await turnContext.SendActivityAsync(MessageFactory.Attachment(ResponseCard.GetCard(queryResult.Questions[0], queryResult.Answer, text)));
+                        this.telemetryClient.TrackTrace("Sending user tags card");
+                        await turnContext.SendActivityAsync(SuggestedLinkCard.GetTagsCarouselCards(text, tileList, Resource.CustomMessage));
                     }
                     else
                     {
-                        var tileList = await this.MatchTagsWithMessageAsync(text);
-                        if (tileList != null)
-                        {
-                            this.telemetryClient.TrackTrace("Sending user tags card");
-                            await turnContext.SendActivityAsync(SuggestedLinkCard.GetTagsCarouselCards(text, tileList, Resource.CustomMessage));
-                        }
-                        else
-                        {
-                            this.telemetryClient.TrackTrace("Sending user with no matched tags result");
-                            await turnContext.SendActivityAsync(MessageFactory.Attachment(UnrecognizedInputCard.GetCard(text, Resource.NoMatchedTagsMessage)));
-                        }
+                        this.telemetryClient.TrackTrace("Sending user with no matched tags result");
+                        await turnContext.SendActivityAsync(MessageFactory.Attachment(UnrecognizedInputCard.GetCard(text, Resource.NoMatchedTagsMessage)));
                     }
-
-                    break;
+                }
             }
         }
 
@@ -295,19 +294,18 @@ namespace Microsoft.Teams.Apps.AskHR.Bots
 
             string text = (message.Text ?? string.Empty).Trim().ToLower();
 
-            switch (text)
+            if (text.Equals(Resource.ResourceManager.GetString("TakeATeamTourButtonText", CultureInfo.CurrentCulture), StringComparison.InvariantCultureIgnoreCase) ||
+                text.Equals(Resource.ResourceManager.GetString("TakeATeamTourButtonText", CultureInfo.InvariantCulture), StringComparison.InvariantCultureIgnoreCase))
             {
-                case TeamTour:
-                    this.telemetryClient.TrackTrace("Sending team tour card");
-                    var teamTourCards = TourCarousel.GetTeamTourCards(this.appBaseUri);
-                    await turnContext.SendActivityAsync(MessageFactory.Carousel(teamTourCards));
-                    break;
-
-                default:
-                    this.telemetryClient.TrackTrace("Unrecognized input in channel");
-                    var unrecognizedInputCard = UnrecognizedTeamInputCard.GetCard();
-                    await turnContext.SendActivityAsync(MessageFactory.Attachment(unrecognizedInputCard));
-                    break;
+                this.telemetryClient.TrackTrace("Sending team tour card");
+                var teamTourCards = TourCarousel.GetTeamTourCards(this.appBaseUri);
+                await turnContext.SendActivityAsync(MessageFactory.Carousel(teamTourCards));
+            }
+            else
+            {
+                this.telemetryClient.TrackTrace("Unrecognized input in channel");
+                var unrecognizedInputCard = UnrecognizedTeamInputCard.GetCard();
+                await turnContext.SendActivityAsync(MessageFactory.Attachment(unrecognizedInputCard));
             }
         }
 
@@ -319,82 +317,74 @@ namespace Microsoft.Teams.Apps.AskHR.Bots
             Attachment userCard = null;         // Acknowledgement to the user
             TicketEntity newTicket = null;      // New ticket
 
-            switch (message.Text)
+            string text = (message.Text ?? string.Empty).Trim().ToLower();
+
+            if (text.Equals(Resource.ResourceManager.GetString("AskAnExpertDisplayText", CultureInfo.CurrentCulture), StringComparison.InvariantCultureIgnoreCase))
             {
-                case AskAnExpert:
+                this.telemetryClient.TrackTrace("Sending user ask an expert card (from answer)");
+
+                var responseCardPayload = ((JObject)message.Value).ToObject<ResponseCardPayload>();
+                await turnContext.SendActivityAsync(MessageFactory.Attachment(AskAnExpertCard.GetCard(responseCardPayload)));
+            }
+            else if (text.Equals(Resource.ResourceManager.GetString("ShareFeedbackDisplayText", CultureInfo.CurrentCulture), StringComparison.InvariantCultureIgnoreCase))
+            {
+                this.telemetryClient.TrackTrace("Sending user share feedback card (from answer)");
+
+                var responseCardPayload = ((JObject)message.Value).ToObject<ResponseCardPayload>();
+                await turnContext.SendActivityAsync(MessageFactory.Attachment(ShareFeedbackCard.GetCard(responseCardPayload)));
+            }
+            else if (text.Equals(Resource.ResourceManager.GetString("AskAnExpertSubmitText", CultureInfo.CurrentCulture), StringComparison.InvariantCultureIgnoreCase))
+            {
+                this.telemetryClient.TrackTrace($"Received question for expert");
+
+                var askAnExpertPayload = ((JObject)message.Value).ToObject<AskAnExpertCardPayload>();
+
+                // Validate required fields
+                if (string.IsNullOrWhiteSpace(askAnExpertPayload.Title))
+                {
+                    var updateCardActivity = new Activity(ActivityTypes.Message)
                     {
-                        this.telemetryClient.TrackTrace("Sending user ask an expert card (from answer)");
+                        Id = turnContext.Activity.ReplyToId,
+                        Conversation = turnContext.Activity.Conversation,
+                        Attachments = new List<Attachment> { AskAnExpertCard.GetCard(askAnExpertPayload) },
+                    };
+                    await turnContext.UpdateActivityAsync(updateCardActivity, cancellationToken);
+                    return;
+                }
 
-                        var responseCardPayload = ((JObject)message.Value).ToObject<ResponseCardPayload>();
-                        await turnContext.SendActivityAsync(MessageFactory.Attachment(AskAnExpertCard.GetCard(responseCardPayload)));
-                        break;
-                    }
+                var userDetails = await this.GetUserDetailsInPersonalChatAsync(turnContext, cancellationToken);
 
-                case ShareFeedback:
+                newTicket = await this.CreateTicketAsync(message, askAnExpertPayload, userDetails);
+                smeTeamCard = new SmeTicketCard(newTicket).ToAttachment();
+                userCard = new UserNotificationCard(newTicket).ToAttachment(Resource.NotificationCardContent);
+            }
+            else if (text.Equals(Resource.ResourceManager.GetString("ShareFeedbackSubmitText", CultureInfo.CurrentCulture), StringComparison.InvariantCultureIgnoreCase))
+            {
+                this.telemetryClient.TrackTrace($"Received app feedback");
+
+                var shareFeedbackPayload = ((JObject)message.Value).ToObject<ShareFeedbackCardPayload>();
+
+                // Validate required fields
+                if (!Enum.TryParse(shareFeedbackPayload.Rating, out FeedbackRating rating))
+                {
+                    var updateCardActivity = new Activity(ActivityTypes.Message)
                     {
-                        this.telemetryClient.TrackTrace("Sending user share feedback card (from answer)");
+                        Id = turnContext.Activity.ReplyToId,
+                        Conversation = turnContext.Activity.Conversation,
+                        Attachments = new List<Attachment> { ShareFeedbackCard.GetCard(shareFeedbackPayload) },
+                    };
+                    await turnContext.UpdateActivityAsync(updateCardActivity, cancellationToken);
+                    return;
+                }
 
-                        var responseCardPayload = ((JObject)message.Value).ToObject<ResponseCardPayload>();
-                        await turnContext.SendActivityAsync(MessageFactory.Attachment(ShareFeedbackCard.GetCard(responseCardPayload)));
-                        break;
-                    }
+                var userDetails = await this.GetUserDetailsInPersonalChatAsync(turnContext, cancellationToken);
 
-                case AskAnExpertCard.AskAnExpertSubmitText:
-                    {
-                        this.telemetryClient.TrackTrace($"Received question for expert");
-
-                        var askAnExpertPayload = ((JObject)message.Value).ToObject<AskAnExpertCardPayload>();
-
-                        // Validate required fields
-                        if (string.IsNullOrWhiteSpace(askAnExpertPayload.Title))
-                        {
-                            var updateCardActivity = new Activity(ActivityTypes.Message)
-                            {
-                                Id = turnContext.Activity.ReplyToId,
-                                Conversation = turnContext.Activity.Conversation,
-                                Attachments = new List<Attachment> { AskAnExpertCard.GetCard(askAnExpertPayload) },
-                            };
-                            await turnContext.UpdateActivityAsync(updateCardActivity, cancellationToken);
-                            return;
-                        }
-
-                        var userDetails = await this.GetUserDetailsInPersonalChatAsync(turnContext, cancellationToken);
-
-                        newTicket = await this.CreateTicketAsync(message, askAnExpertPayload, userDetails);
-                        smeTeamCard = new SmeTicketCard(newTicket).ToAttachment(message.LocalTimestamp);
-                        userCard = new UserNotificationCard(newTicket).ToAttachment(Resource.NotificationCardContent, message.LocalTimestamp);
-                        break;
-                    }
-
-                case ShareFeedbackCard.ShareFeedbackSubmitText:
-                    {
-                        this.telemetryClient.TrackTrace($"Received app feedback");
-
-                        var shareFeedbackPayload = ((JObject)message.Value).ToObject<ShareFeedbackCardPayload>();
-
-                        // Validate required fields
-                        if (!Enum.TryParse(shareFeedbackPayload.Rating, out FeedbackRating rating))
-                        {
-                            var updateCardActivity = new Activity(ActivityTypes.Message)
-                            {
-                                Id = turnContext.Activity.ReplyToId,
-                                Conversation = turnContext.Activity.Conversation,
-                                Attachments = new List<Attachment> { ShareFeedbackCard.GetCard(shareFeedbackPayload) },
-                            };
-                            await turnContext.UpdateActivityAsync(updateCardActivity, cancellationToken);
-                            return;
-                        }
-
-                        var userDetails = await this.GetUserDetailsInPersonalChatAsync(turnContext, cancellationToken);
-
-                        smeTeamCard = SmeFeedbackCard.GetCard(shareFeedbackPayload, userDetails);
-                        await turnContext.SendActivityAsync(MessageFactory.Text(Resource.ThankYouTextContent));
-                        break;
-                    }
-
-                default:
-                    this.telemetryClient.TrackTrace($"Unexpected text in submit payload: {message.Text}", SeverityLevel.Warning);
-                    break;
+                smeTeamCard = SmeFeedbackCard.GetCard(shareFeedbackPayload, userDetails);
+                await turnContext.SendActivityAsync(MessageFactory.Text(Resource.ThankYouTextContent));
+            }
+            else
+            {
+                this.telemetryClient.TrackTrace($"Unexpected text in submit payload: {message.Text}", SeverityLevel.Warning);
             }
 
             // Send message to SME team
@@ -476,7 +466,7 @@ namespace Microsoft.Teams.Apps.AskHR.Bots
             {
                 Id = ticket.SmeCardActivityId,
                 Conversation = new ConversationAccount { Id = ticket.SmeThreadConversationId },
-                Attachments = new List<Attachment> { new SmeTicketCard(ticket).ToAttachment(message.LocalTimestamp) },
+                Attachments = new List<Attachment> { new SmeTicketCard(ticket).ToAttachment() },
             };
             var updateResponse = await turnContext.UpdateActivityAsync(updateCardActivity, cancellationToken);
             this.telemetryClient.TrackTrace($"Card for ticket {ticket.TicketId} updated to status ({ticket.Status}, {ticket.AssignedToObjectId}), activityId = {updateResponse.Id}");
@@ -487,23 +477,23 @@ namespace Microsoft.Teams.Apps.AskHR.Bots
             switch (payload.Action)
             {
                 case ChangeTicketStatusPayload.ReopenAction:
-                    smeNotification = string.Format(Resource.SMEOpenedStatus, message.From.Name);
+                    smeNotification = string.Format(CultureInfo.InvariantCulture, Resource.SMEOpenedStatus, message.From.Name);
 
-                    userNotification = MessageFactory.Attachment(new UserNotificationCard(ticket).ToAttachment(Resource.ReopenedTicketUserNotification, message.LocalTimestamp));
+                    userNotification = MessageFactory.Attachment(new UserNotificationCard(ticket).ToAttachment(Resource.ReopenedTicketUserNotification));
                     userNotification.Summary = Resource.ReopenedTicketUserNotification;
                     break;
 
                 case ChangeTicketStatusPayload.CloseAction:
-                    smeNotification = string.Format(Resource.SMEClosedStatus, ticket.LastModifiedByName);
+                    smeNotification = string.Format(CultureInfo.InvariantCulture, Resource.SMEClosedStatus, ticket.LastModifiedByName);
 
-                    userNotification = MessageFactory.Attachment(new UserNotificationCard(ticket).ToAttachment(Resource.ClosedTicketUserNotification, message.LocalTimestamp));
+                    userNotification = MessageFactory.Attachment(new UserNotificationCard(ticket).ToAttachment(Resource.ClosedTicketUserNotification));
                     userNotification.Summary = Resource.ClosedTicketUserNotification;
                     break;
 
                 case ChangeTicketStatusPayload.AssignToSelfAction:
-                    smeNotification = string.Format(Resource.SMEAssignedStatus, ticket.AssignedToName);
+                    smeNotification = string.Format(CultureInfo.InvariantCulture, Resource.SMEAssignedStatus, ticket.AssignedToName);
 
-                    userNotification = MessageFactory.Attachment(new UserNotificationCard(ticket).ToAttachment(Resource.AssignedTicketUserNotification, message.LocalTimestamp));
+                    userNotification = MessageFactory.Attachment(new UserNotificationCard(ticket).ToAttachment(Resource.AssignedTicketUserNotification));
                     userNotification.Summary = Resource.AssignedTicketUserNotification;
                     break;
             }

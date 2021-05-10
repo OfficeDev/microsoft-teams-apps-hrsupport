@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
+  "name.short": "人事サポート",
+  "description.short": "質問に答えて専門家に接続する、わりやすい人事サポートです。",
+  "description.full": "わかりやすい Q&A のボットです。回答が見つからない場合は、人事部の専門家と連絡を取ることができます。",
+  "staticTabs[0].name": "人事サポート",
+  "bots[0].commandLists[0].commands[0].title": "ツアーを開始",
+  "bots[0].commandLists[0].commands[0].description": "主な機能のツアー",
+  "bots[0].commandLists[0].commands[1].title": "専門家に質問する",
+  "bots[0].commandLists[0].commands[1].description": "エキスパートにつなげる",
+  "bots[0].commandLists[0].commands[2].title": "フィードバックを共有",
+  "bots[0].commandLists[0].commands[2].description": "フィードバックを送信"
+}

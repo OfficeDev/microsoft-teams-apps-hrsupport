@@ -52,16 +52,16 @@
       "minLength": 1,
       "defaultValue": "A friendly HR bot that answers questions and connects you to experts.",
       "metadata": {
-          "description": "The app (and bot) description."
+        "description": "The app (and bot) description."
       }
     },
     "appIconUrl": {
-        "type": "string",
-        "minLength": 1,
-        "defaultValue": "https://raw.githubusercontent.com/OfficeDev/microsoft-teams-hrsupport-app/master/Manifest/color.png",
-        "metadata": {
-            "description": "The link to the icon for the app. It must resolve to a PNG file."
-        }
+      "type": "string",
+      "minLength": 1,
+      "defaultValue": "https://raw.githubusercontent.com/OfficeDev/microsoft-teams-hrsupport-app/master/Manifest/EndUser/color.png",
+      "metadata": {
+        "description": "The link to the icon for the app. It must resolve to a PNG file."
+      }
     },
     "tenantId": {
       "type": "string",
@@ -82,6 +82,27 @@
       "defaultValue": "Standard",
       "metadata": {
         "description": "The pricing tier for the hosting plan."
+      }
+    },
+	"defaultCulture": {
+      "type": "string",
+    "allowedValues": [
+      "en-US",
+      "ar-SA",
+      "de-DE",
+      "es-ES",
+      "fr-FR",
+      "he-IL",
+      "ja-JP",
+      "ko-KR",
+      "pt-BR",
+      "ru-RU",
+      "zh-CN",
+      "zh-TW"
+    ],
+      "defaultValue": "en-US",
+      "metadata": {
+        "description": "Default localization for app."
       }
     },
     "planSize": {
@@ -282,6 +303,14 @@
              {
               "name": "WEBSITE_NODE_DEFAULT_VERSION",
               "value": "10.15.2"
+            },
+            {
+              "name": "i18n:DefaultCulture",
+              "value": "[parameters('defaultCulture')]"
+            },
+            {
+              "name": "i18n:SupportedCultures",
+              "value": "en-US,ar-SA,de-DE,es-ES,fr-FR,he-IL,ja-JP,ko-KR,pt-BR,ru-RU,zh-CN,zh-TW"
             }
           ]
         }
@@ -575,7 +604,7 @@
       "value": "[parameters('botClientId')]"
     },
     "appDomain": {
-      "type":"string",
+      "type": "string",
       "value": "[variables('botAppDomain')]"
     },
     "configurationAppUrl": {

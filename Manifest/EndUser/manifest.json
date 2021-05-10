@@ -2,20 +2,73 @@
   "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
   "manifestVersion": "1.5",
   "version": "1.0.0",
-  "id": "db78fc48-4a08-42fd-9bd9-59fa50d4b2d3",
-  "packageName": "com.microsoft.teams.hrsupport.experts",
+  "id": "f7a5bc14-7d70-48cd-a9a4-7e62e9811043",
+  "packageName": "com.microsoft.teams.hrsupport",
   "developer": {
     "name": "<<companyName>>",
     "websiteUrl": "<<websiteUrl>>",
     "privacyUrl": "<<privacyUrl>>",
     "termsOfUseUrl": "<<termsOfUseUrl>>"
   },
+  "localizationInfo": {
+    "defaultLanguageTag": "en-US",
+    "additionalLanguages": [
+      {
+        "languageTag": "en-US",
+        "file": "en-US.json"
+      },
+      {
+        "languageTag": "de-DE",
+        "file": "de-DE.json"
+      },
+      {
+        "languageTag": "fr-FR",
+        "file": "fr-FR.json"
+      },
+      {
+        "languageTag": "ar-SA",
+        "file": "ar-SA.json"
+      },
+      {
+        "languageTag": "ja-JP",
+        "file": "ja-JP.json"
+      },
+      {
+        "languageTag": "es-ES",
+        "file": "es-ES.json"
+      },
+      {
+        "languageTag": "he-IL",
+        "file": "he-IL.json"
+      },
+      {
+        "languageTag": "ko-KR",
+        "file": "ko-KR.json"
+      },
+      {
+        "languageTag": "pt-BR",
+        "file": "pt-BR.json"
+      },
+      {
+        "languageTag": "ru-RU",
+        "file": "ru-Ru.json"
+      },
+      {
+        "languageTag": "zh-CN",
+        "file": "zh-CN.json"
+      },
+      {
+        "languageTag": "zh-TW",
+        "file": "zh-TW.json"
+      }
+    ]
+  },
   "icons": {
     "color": "color.png",
     "outline": "outline.png"
   },
   "name": {
-    "short": "HR Support (Experts Team)"
+    "short": "HR Support"
   },
   "description": {
     "short": "A friendly HR Support bot that answers questions and connects you to experts.",
@@ -58,68 +111,9 @@
     {
       "entityId": "HR Support",
       "name": "HR Support",
-      "contentUrl": "https://<<appDomain>>/help?theme={theme}",
+      "contentUrl": "https://<<appDomain>>/help?theme={theme}&locale={locale}",
       "scopes": [
         "personal"
-      ]
-    }
-  ],
-  "composeExtensions": [
-    {
-      "botId": "<<botId>>",
-      "canUpdateConfiguration": false,
-      "commands": [
-        {
-          "id": "recents",
-          "type": "query",
-          "title": "Recent",
-          "description": "Search recent requests",
-          "parameters": [
-            {
-              "name": "searchText",
-              "title": "Search"
-            }
-          ],
-          "context": [
-            "compose",
-            "commandBox"
-          ],
-          "initialRun": true
-        },
-        {
-          "id": "openrequests",
-          "type": "query",
-          "title": "Unassigned",
-          "description": "Search unassigned requests not yet assigned to an expert",
-          "parameters": [
-            {
-              "name": "searchText",
-              "title": "Search"
-            }
-          ],
-          "context": [
-            "compose",
-            "commandBox"
-          ],
-          "initialRun": true
-        },
-        {
-          "id": "assignedrequests",
-          "type": "query",
-          "title": "Assigned",
-          "description": "Search requests assigned to an expert",
-          "parameters": [
-            {
-              "name": "searchText",
-              "title": "Search"
-            }
-          ],
-          "context": [
-            "compose",
-            "commandBox"
-          ],
-          "initialRun": true
-        }
       ]
     }
   ],

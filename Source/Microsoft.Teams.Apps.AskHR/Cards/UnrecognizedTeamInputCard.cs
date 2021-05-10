@@ -29,7 +29,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                     {
                         Title = Resource.TakeATeamTourButtonText,
                         DisplayText = Resource.TakeATeamTourButtonText,
-                        Text = AskHRBot.TeamTour,
+                        Text = Resource.TakeATeamTourButtonText,
                     }
                 }
             };

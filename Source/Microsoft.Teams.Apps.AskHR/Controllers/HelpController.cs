@@ -6,6 +6,7 @@ namespace Microsoft.Teams.Apps.AskHR.Controllers
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -46,10 +47,13 @@ namespace Microsoft.Teams.Apps.AskHR.Controllers
         /// <summary>
         /// Display help tab.
         /// </summary>
+        /// <param name="locale">Current locale of user</param>
         /// <returns>Help tab view</returns>
-        public ActionResult Index()
+        public ActionResult Index(string locale)
         {
             this.ViewBag.clientId = this.configuration["MicrosoftAppId"];
+            this.ViewBag.locale = this.FilterSelectedLocale(locale);
+
             return this.View();
         }
 
@@ -60,6 +64,7 @@ namespace Microsoft.Teams.Apps.AskHR.Controllers
         public IActionResult SignIn()
         {
             this.ViewBag.clientId = this.configuration["MicrosoftAppId"];
+
             return this.View();
         }
 
@@ -79,7 +84,7 @@ namespace Microsoft.Teams.Apps.AskHR.Controllers
         /// <param name="authorization">authorization</param>
         /// <returns>JSON response</returns>
         [HttpPost]
-        public async Task<ActionResult> GetHelpTiles([FromHeader]string authorization)
+        public async Task<ActionResult> GetHelpTiles([FromHeader] string authorization)
         {
             try
             {
@@ -97,10 +102,10 @@ namespace Microsoft.Teams.Apps.AskHR.Controllers
                 var helpTiles = await this.helpDataProvider.GetHelpTilesAsync();
                 if (helpTiles != null)
                 {
-                    return this.Json(helpTiles.OrderBy(x => x.TileOrder));
+                    return this.Json(new { entities = helpTiles.OrderBy(x => x.TileOrder) });
                 }
 
-                return this.Json(new List<HelpInfoEntity>());
+                return this.Json(new { entities = new List<HelpInfoEntity>() });
             }
             catch (Exception ex)
             {
@@ -122,6 +127,26 @@ namespace Microsoft.Teams.Apps.AskHR.Controllers
             };
 
             return this.Json(configurationJson);
+        }
+
+        /// <summary>
+        /// Filter the locale selected by the user from configuration.
+        /// </summary>
+        /// <param name="locale">User selected locale.</param>
+        /// <returns>Filtered locale.</returns>
+        private string FilterSelectedLocale(string locale)
+        {
+            if (!string.IsNullOrEmpty(locale))
+            {
+                var supportedCultures = this.configuration["i18n:SupportedCultures"].Split(',');
+                if (supportedCultures.Contains(locale, StringComparer.OrdinalIgnoreCase))
+                {
+                    return locale;
+                }
+            }
+
+            // Return default culture if locale is not supported.
+            return this.configuration["i18n:DefaultCulture"];
         }
     }
 }

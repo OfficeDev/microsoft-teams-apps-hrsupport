@@ -25,7 +25,7 @@ namespace Microsoft.Teams.Apps.AskHR.Common.Providers
         public const string HelpInfoTableName = "HelpInfo";
 
         /// <summary>
-        /// 
+        /// Blob name where Tiles images from configuration app will be saved.
         /// </summary>
         public const string HelpImageBlobContainer = "tileimages";
     }

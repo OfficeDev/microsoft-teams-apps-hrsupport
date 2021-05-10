@@ -5,6 +5,7 @@
 namespace Microsoft.Teams.Apps.AskHR.Cards
 {
     using System.Collections.Generic;
+    using System.Globalization;
     using AdaptiveCards;
     using Microsoft.Bot.Schema;
     using Microsoft.Teams.Apps.AskHR.Models;
@@ -63,6 +64,9 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
         /// <returns>Ask an expert card.</returns>
         private static Attachment GetCard(bool showValidationErrors, AskAnExpertCardPayload data)
         {
+            var textAlignment = CultureInfo.CurrentCulture.TextInfo.IsRightToLeft ? AdaptiveHorizontalAlignment.Right : AdaptiveHorizontalAlignment.Left;
+            var errorAlignment = CultureInfo.CurrentCulture.TextInfo.IsRightToLeft ? AdaptiveHorizontalAlignment.Left : AdaptiveHorizontalAlignment.Right;
+
             AdaptiveCard askAnExpertCard = new AdaptiveCard("1.0")
             {
                 Body = new List<AdaptiveElement>
@@ -72,11 +76,13 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                         Weight = AdaptiveTextWeight.Bolder,
                         Text = Resource.AskAnExpertText1,
                         Size = AdaptiveTextSize.Large,
-                        Wrap = true
+                        Wrap = true,
+                        HorizontalAlignment = textAlignment
                     },
                     new AdaptiveTextBlock
                     {
                         Text = Resource.AskAnExpertSubheaderText,
+                        HorizontalAlignment = textAlignment,
                         Wrap = true
                     },
                     new AdaptiveColumnSet
@@ -85,13 +91,13 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                         {
                             new AdaptiveColumn
                             {
-                                Width = AdaptiveColumnWidth.Auto,
                                 Items = new List<AdaptiveElement>
                                 {
                                     new AdaptiveTextBlock
                                     {
                                         Text = Resource.TitleRequiredText,
-                                        Wrap = true
+                                        Wrap = true,
+                                        HorizontalAlignment = textAlignment
                                     }
                                 }
                             },
@@ -103,7 +109,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                                     {
                                         Text = (showValidationErrors && string.IsNullOrWhiteSpace(data.Title)) ? Resource.MandatoryTitleFieldText : string.Empty,
                                         Color = AdaptiveTextColor.Attention,
-                                        HorizontalAlignment = AdaptiveHorizontalAlignment.Right,
+                                        HorizontalAlignment = errorAlignment,
                                         Wrap = true
                                     }
                                 }
@@ -121,6 +127,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                     new AdaptiveTextBlock
                     {
                         Text = Resource.DescriptionText,
+                        HorizontalAlignment = textAlignment,
                         Wrap = true
                     },
                     new AdaptiveTextInput
@@ -143,7 +150,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                             {
                                 Type = ActionTypes.MessageBack,
                                 DisplayText = Resource.AskAnExpertDisplayText,
-                                Text = AskAnExpertSubmitText,
+                                Text = Resource.AskAnExpertSubmitText,
                             },
                             UserQuestion = data.UserQuestion,
                             KnowledgeBaseAnswer = data.KnowledgeBaseAnswer,

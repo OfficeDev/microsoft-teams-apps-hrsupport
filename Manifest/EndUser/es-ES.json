@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
+  "name.short": "Soporte de RR. HH.",
+  "description.short": "Un bot de RR. HH. que responde preguntas y le conecta con expertos.",
+  "description.full": "Un simpático bot de preguntas y respuestas. Si no encuentra una respuesta, le ofrecerá ponerse en contacto con un experto de recursos humanos.",
+  "staticTabs[0].name": "Soporte de RR. HH.",
+  "bots[0].commandLists[0].commands[0].title": "Visita guiada",
+  "bots[0].commandLists[0].commands[0].description": "Paseo por las características clave",
+  "bots[0].commandLists[0].commands[1].title": "Preguntar a un experto",
+  "bots[0].commandLists[0].commands[1].description": "Conectar con un experto",
+  "bots[0].commandLists[0].commands[2].title": "Compartir comentarios",
+  "bots[0].commandLists[0].commands[2].description": "Enviar comentarios"
+}

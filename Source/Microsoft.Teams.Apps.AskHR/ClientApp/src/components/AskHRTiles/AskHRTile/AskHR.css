@@ -214,3 +214,11 @@ body::-webkit-scrollbar-thumb {
         height: 5.5rem;
     }
 }
+
+.rtlTextAlign{
+    text-align:right;
+}
+
+.ltrTextAlign {
+    text-align: left;
+}

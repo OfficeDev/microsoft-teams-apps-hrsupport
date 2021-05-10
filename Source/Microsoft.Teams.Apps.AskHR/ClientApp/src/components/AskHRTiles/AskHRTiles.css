@@ -18,4 +18,14 @@
     color: white;
 }
 
+.rtlAlign {
+    direction: rtl;
+    float: right;
+    margin-right: 16px;
+}
+
+.ltrAlign {
+    margin-left: 16px;
+}
+
 

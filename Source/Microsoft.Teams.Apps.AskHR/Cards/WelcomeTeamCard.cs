@@ -5,9 +5,9 @@
 namespace Microsoft.Teams.Apps.AskHR.Cards
 {
     using System.Collections.Generic;
+    using System.Globalization;
     using AdaptiveCards;
     using Microsoft.Bot.Schema;
-    using Microsoft.Teams.Apps.AskHR.Bots;
     using Microsoft.Teams.Apps.AskHR.Models;
     using Microsoft.Teams.Apps.AskHR.Properties;
 
@@ -22,6 +22,8 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
         /// <returns>Team welcome card.</returns>
         public static Attachment GetCard()
         {
+            var textAlignment = CultureInfo.CurrentCulture.TextInfo.IsRightToLeft ? AdaptiveHorizontalAlignment.Right : AdaptiveHorizontalAlignment.Left;
+
             AdaptiveCard teamWelcomeCard = new AdaptiveCard("1.0")
             {
                 Body = new List<AdaptiveElement>
@@ -29,7 +31,8 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                     new AdaptiveTextBlock
                     {
                         Text = Resource.WelcomeTeamCardContent,
-                        Wrap = true
+                        Wrap = true,
+                        HorizontalAlignment = textAlignment
                     }
                 },
                 Actions = new List<AdaptiveAction>
@@ -44,7 +47,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                             {
                                 Type = ActionTypes.MessageBack,
                                 DisplayText = Resource.TakeATeamTourButtonText,
-                                Text = AskHRBot.TeamTour
+                                Text = Resource.ResourceManager.GetString("TakeATeamTourButtonText", CultureInfo.InvariantCulture)
                             }
                         },
                     }

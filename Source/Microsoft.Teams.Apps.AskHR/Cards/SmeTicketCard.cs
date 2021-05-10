@@ -6,6 +6,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using AdaptiveCards;
     using Microsoft.Bot.Schema;
     using Microsoft.Teams.Apps.AskHR.Common.Models;
@@ -37,10 +38,11 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
         /// <summary>
         /// Returns an attachment based on the state and information of the ticket.
         /// </summary>
-        /// <param name="localTimestamp">Local timestamp of the user activity.</param>
         /// <returns>Returns the attachment that will be sent in a message.</returns>
-        public Attachment ToAttachment(DateTimeOffset? localTimestamp)
+        public Attachment ToAttachment()
         {
+            var textAlignment = CultureInfo.CurrentCulture.TextInfo.IsRightToLeft ? AdaptiveHorizontalAlignment.Right : AdaptiveHorizontalAlignment.Left;
+
             var card = new AdaptiveCard("1.0")
             {
                 Body = new List<AdaptiveElement>
@@ -51,15 +53,17 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                         Size = AdaptiveTextSize.Large,
                         Weight = AdaptiveTextWeight.Bolder,
                         Wrap = true,
+                        HorizontalAlignment = textAlignment
                     },
                     new AdaptiveTextBlock
                     {
-                        Text = string.Format(Resource.QuestionForExpertSubHeaderText, this.Ticket.RequesterName),
+                        Text = string.Format(CultureInfo.InvariantCulture, Resource.QuestionForExpertSubHeaderText, this.Ticket.RequesterName),
                         Wrap = true,
+                        HorizontalAlignment = textAlignment
                     },
                     new AdaptiveFactSet
                     {
-                        Facts = this.BuildFactSet(localTimestamp),
+                        Facts = this.BuildFactSet(),
                     },
                 },
                 Actions = this.BuildActions(),
@@ -78,6 +82,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
         /// <returns>Adaptive card actions.</returns>
         protected virtual List<AdaptiveAction> BuildActions()
         {
+            var textAlignment = CultureInfo.CurrentCulture.TextInfo.IsRightToLeft ? AdaptiveHorizontalAlignment.Right : AdaptiveHorizontalAlignment.Left;
             List<AdaptiveAction> actionsList = new List<AdaptiveAction>();
 
             actionsList.Add(this.CreateChatWithUserAction());
@@ -95,6 +100,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                     {
                         new AdaptiveSubmitAction
                         {
+                            Title = Resource.SubmitButtonText,
                             Data = new ChangeTicketStatusPayload { TicketId = this.Ticket.TicketId }
                         }
                     },
@@ -114,6 +120,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                             {
                                 Text = CardHelper.TruncateStringIfLonger(this.Ticket.KnowledgeBaseAnswer, CardHelper.KnowledgeBaseAnswerMaxDisplayLength),
                                 Wrap = true,
+                                HorizontalAlignment = textAlignment
                             }
                         },
                     },
@@ -129,12 +136,12 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
         /// <returns>Adaptive card action for starting chat with user</returns>
         protected AdaptiveAction CreateChatWithUserAction()
         {
-            var messageToSend = string.Format(Resource.SMEUserChatMessage, this.Ticket.Title);
+            var messageToSend = string.Format(CultureInfo.InvariantCulture, Resource.SMEUserChatMessage, this.Ticket.Title);
             var encodedMessage = Uri.EscapeDataString(messageToSend);
 
             return new AdaptiveOpenUrlAction
             {
-                Title = string.Format(Resource.ChatTextButton, this.Ticket.RequesterGivenName),
+                Title = string.Format(CultureInfo.InvariantCulture, Resource.ChatTextButton, this.Ticket.RequesterGivenName),
                 Url = new Uri($"https://teams.microsoft.com/l/chat/0/0?users={Uri.EscapeDataString(this.Ticket.RequesterUserPrincipalName)}&message={encodedMessage}")
             };
         }
@@ -142,9 +149,8 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
         /// <summary>
         /// Return the appropriate fact set based on the state and information in the ticket.
         /// </summary>
-        /// <param name="localTimestamp">The current timestamp.</param>
         /// <returns>The fact set showing the necessary details.</returns>
-        private List<AdaptiveFact> BuildFactSet(DateTimeOffset? localTimestamp)
+        private List<AdaptiveFact> BuildFactSet()
         {
             List<AdaptiveFact> factList = new List<AdaptiveFact>();
 
@@ -177,7 +183,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                 factList.Add(new AdaptiveFact
                 {
                     Title = Resource.ClosedFactTitle,
-                    Value = CardHelper.GetFormattedDateInUserTimeZone(this.Ticket.DateClosed.Value, localTimestamp),
+                    Value = CardHelper.GetFormattedDateForAdaptiveCard(this.Ticket.DateClosed.Value),
                 });
             }
 
