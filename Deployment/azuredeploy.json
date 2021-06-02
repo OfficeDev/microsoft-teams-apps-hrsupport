@@ -87,16 +87,16 @@
 	"defaultCulture": {
       "type": "string",
     "allowedValues": [
-      "en-US",
-      "ar-SA",
-      "de-DE",
-      "es-ES",
-      "fr-FR",
-      "he-IL",
-      "ja-JP",
-      "ko-KR",
-      "pt-BR",
-      "ru-RU",
+      "en",
+      "ar",
+      "de",
+      "es",
+      "fr",
+      "he",
+      "ja",
+      "ko",
+      "pt",
+      "ru",
       "zh-CN",
       "zh-TW"
     ],
@@ -310,7 +310,7 @@
             },
             {
               "name": "i18n:SupportedCultures",
-              "value": "en-US,ar-SA,de-DE,es-ES,fr-FR,he-IL,ja-JP,ko-KR,pt-BR,ru-RU,zh-CN,zh-TW"
+              "value": "en,ar,de,es,fr,he,ja,ko,pt,ru,zh-CN,zh-TW"
             }
           ]
         }

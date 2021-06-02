@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
+  "name.short": "תמיכת HR",
+  "description.short": "תמיכת HR ידידותית שעונה על שאלות נפוצות ומקשרת אותך למומחים.",
+  "description.full": "בוט ידידותי שעונה לשאלות. אם הוא לא מוצא תשובה, הוא יציע לקשר אותך למומחה ממשאבי אנוש.",
+  "staticTabs[0].name": "תמיכת HR",
+  "bots[0].commandLists[0].commands[0].title": "צא לסיור",
+  "bots[0].commandLists[0].commands[0].description": "סיבוב היכרות של תכונות מפתח",
+  "bots[0].commandLists[0].commands[1].title": "שאל מומחה",
+  "bots[0].commandLists[0].commands[1].description": "קשר למומחה",
+  "bots[0].commandLists[0].commands[2].title": "שתף משוב",
+  "bots[0].commandLists[0].commands[2].description": "שלח משוב"
+}

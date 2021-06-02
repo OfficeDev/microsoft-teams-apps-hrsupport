@@ -1,0 +1,22 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
+  "name.short": "人事サポート (専門家チーム)",
+  "description.short": "質問に答えて専門家に接続する、わりやすい人事サポートです。",
+  "description.full": "わかりやすい Q&A のボットです。回答が見つからない場合は、人事部の専門家と連絡を取ることができます。",
+  "staticTabs[0].name": "人事サポート",
+  "bots[0].commandLists[0].commands[0].title": "ツアーを開始",
+  "bots[0].commandLists[0].commands[0].description": "主な機能のツアー",
+  "bots[0].commandLists[0].commands[1].title": "専門家に質問する",
+  "bots[0].commandLists[0].commands[1].description": "エキスパートにつなげる",
+  "bots[0].commandLists[0].commands[2].title": "フィードバックを共有",
+  "bots[0].commandLists[0].commands[2].description": "フィードバックを送信",
+  "composeExtensions[0].commands[0].title": "最近",
+  "composeExtensions[0].commands[0].description": "最近のリクエストを検索する",
+  "composeExtensions[0].commands[0].parameters[0].title": "検索",
+  "composeExtensions[0].commands[1].title": "未割り当て",
+  "composeExtensions[0].commands[1].description": "エキスパートにまだ割り当てられていない未割り当ての要求を検索",
+  "composeExtensions[0].commands[1].parameters[0].title": "検索",
+  "composeExtensions[0].commands[2].title": "割り当て済み",
+  "composeExtensions[0].commands[2].description": "エキスパートに割り当てられた要求を検索",
+  "composeExtensions[0].commands[2].parameters[0].title": "検索"
+}

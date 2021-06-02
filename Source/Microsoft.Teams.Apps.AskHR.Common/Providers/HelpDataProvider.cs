@@ -110,7 +110,6 @@ namespace Microsoft.Teams.Apps.AskHR.Common.Providers
             }
         }
 
-
         /// <summary>
         /// Method for uploading file to Azure Blob Storage.
         /// </summary>

@@ -8,6 +8,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
     using System.Globalization;
     using AdaptiveCards;
     using Microsoft.Bot.Schema;
+    using Microsoft.Teams.Apps.AskHR.Common;
     using Microsoft.Teams.Apps.AskHR.Models;
     using Microsoft.Teams.Apps.AskHR.Properties;
 
@@ -16,11 +17,6 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
     /// </summary>
     public static class AskAnExpertCard
     {
-        /// <summary>
-        /// Text associated with ask an expert command
-        /// </summary>
-        public const string AskAnExpertSubmitText = "QuestionForExpert";
-
         /// <summary>
         /// This method will construct the card for ask an expert, when invoked from the bot menu.
         /// </summary>
@@ -150,7 +146,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                             {
                                 Type = ActionTypes.MessageBack,
                                 DisplayText = Resource.AskAnExpertDisplayText,
-                                Text = Resource.AskAnExpertSubmitText,
+                                Text = Constants.AskAnExpertSubmitText,
                             },
                             UserQuestion = data.UserQuestion,
                             KnowledgeBaseAnswer = data.KnowledgeBaseAnswer,

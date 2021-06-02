@@ -139,7 +139,7 @@ namespace Microsoft.Teams.Apps.AskHR.Controllers
             if (!string.IsNullOrEmpty(locale))
             {
                 var supportedCultures = this.configuration["i18n:SupportedCultures"].Split(',');
-                if (supportedCultures.Contains(locale, StringComparer.OrdinalIgnoreCase))
+                if (supportedCultures.Contains(locale, StringComparer.OrdinalIgnoreCase) || supportedCultures.Contains(locale.Split("-")[0], StringComparer.OrdinalIgnoreCase))
                 {
                     return locale;
                 }

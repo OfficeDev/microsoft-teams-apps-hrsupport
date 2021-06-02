@@ -8,6 +8,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
     using System.Globalization;
     using AdaptiveCards;
     using Microsoft.Bot.Schema;
+    using Microsoft.Teams.Apps.AskHR.Common;
     using Microsoft.Teams.Apps.AskHR.Common.Models;
     using Microsoft.Teams.Apps.AskHR.Models;
     using Microsoft.Teams.Apps.AskHR.Properties;
@@ -82,7 +83,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                             {
                                 Type = ActionTypes.MessageBack,
                                 DisplayText = Resource.AskAnExpertDisplayText,
-                                Text = Resource.AskAnExpertDisplayText
+                                Text = Constants.AskAnExpert
                             }
                         }
                     }

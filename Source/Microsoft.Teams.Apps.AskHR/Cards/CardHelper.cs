@@ -93,7 +93,8 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
         /// <returns>A datetime string.</returns>
         public static string GetFormattedDateInUserTimeZone(DateTime dateTime, DateTimeOffset? userLocalTime)
         {
-            return dateTime.Add(userLocalTime?.Offset ?? TimeSpan.FromMinutes(0)).ToString("dddd, dd MMMM yyyy", CultureInfo.InvariantCulture);
+            // Formatted date in same format how Adaptive card dates are rendering.
+            return dateTime.Add(userLocalTime?.Offset ?? TimeSpan.FromMinutes(0)).ToString("ddd, MMMM dd, yyyy", CultureInfo.InvariantCulture);
         }
 
         /// <summary>
