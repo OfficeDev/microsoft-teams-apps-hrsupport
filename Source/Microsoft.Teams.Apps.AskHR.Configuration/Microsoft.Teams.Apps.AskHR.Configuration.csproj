@@ -387,34 +387,34 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\ErrorMessages.ar-SA.resx" />
-    <EmbeddedResource Include="Resources\ErrorMessages.de-DE.resx" />
-    <EmbeddedResource Include="Resources\ErrorMessages.es-ES.resx" />
-    <EmbeddedResource Include="Resources\ErrorMessages.fr-FR.resx" />
-    <EmbeddedResource Include="Resources\ErrorMessages.he-IL.resx" />
-    <EmbeddedResource Include="Resources\ErrorMessages.ja-JP.resx" />
-    <EmbeddedResource Include="Resources\ErrorMessages.ko-KR.resx" />
-    <EmbeddedResource Include="Resources\ErrorMessages.pt-BR.resx" />
-    <EmbeddedResource Include="Resources\ErrorMessages.ru-RU.resx" />
+    <EmbeddedResource Include="Resources\ErrorMessages.ar.resx" />
+    <EmbeddedResource Include="Resources\ErrorMessages.de.resx" />
+    <EmbeddedResource Include="Resources\ErrorMessages.es.resx" />
+    <EmbeddedResource Include="Resources\ErrorMessages.fr.resx" />
+    <EmbeddedResource Include="Resources\ErrorMessages.he.resx" />
+    <EmbeddedResource Include="Resources\ErrorMessages.ja.resx" />
+    <EmbeddedResource Include="Resources\ErrorMessages.ko.resx" />
+    <EmbeddedResource Include="Resources\ErrorMessages.pt.resx" />
+    <EmbeddedResource Include="Resources\ErrorMessages.ru.resx" />
     <EmbeddedResource Include="Resources\ErrorMessages.zh-CN.resx" />
     <EmbeddedResource Include="Resources\ErrorMessages.zh-TW.resx" />
-    <EmbeddedResource Include="Strings.ar-SA.resx">
+    <EmbeddedResource Include="Strings.ar.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Strings.de-DE.resx" />
-    <EmbeddedResource Include="Strings.es-ES.resx">
+    <EmbeddedResource Include="Strings.de.resx" />
+    <EmbeddedResource Include="Strings.es.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Strings.fr-FR.resx" />
-    <EmbeddedResource Include="Strings.he-IL.resx" />
-    <EmbeddedResource Include="Strings.ja-JP.resx" />
-    <EmbeddedResource Include="Strings.ko-KR.resx" />
-    <EmbeddedResource Include="Strings.pt-BR.resx" />
+    <EmbeddedResource Include="Strings.fr.resx" />
+    <EmbeddedResource Include="Strings.he.resx" />
+    <EmbeddedResource Include="Strings.ja.resx" />
+    <EmbeddedResource Include="Strings.ko.resx" />
+    <EmbeddedResource Include="Strings.pt.resx" />
     <EmbeddedResource Include="Resources\ErrorMessages.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ErrorMessages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Strings.ru-RU.resx" />
+    <EmbeddedResource Include="Strings.ru.resx" />
     <EmbeddedResource Include="Strings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
