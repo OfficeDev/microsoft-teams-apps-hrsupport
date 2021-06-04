@@ -527,7 +527,7 @@
   </data>
   <data name="BotCommandAskAnExpert" xml:space="preserve">
     <value>詢問專家</value>
-    <comment>Bot command ask an expert</comment>
+    <comment>Bot command ask an expert. bots[0].commandLists[0].commands[1].title in manifest's translated files should match with this value.</comment>
   </data>
   <data name="BotCommandAskAnExpertDescription" xml:space="preserve">
     <value>與專家聯繫</value>
@@ -535,7 +535,7 @@
   </data>
   <data name="BotCommandShare Feedback" xml:space="preserve">
     <value>分享意見反映</value>
-    <comment>Bot command share feedback</comment>
+    <comment>Bot command share feedback. bots[0].commandLists[0].commands[2].title in manifest's translated files should match with this value.</comment>
   </data>
   <data name="BotCommandShareFeedbackDescription" xml:space="preserve">
     <value>傳送意見反映</value>
@@ -543,7 +543,7 @@
   </data>
   <data name="BotCommandTakeATour" xml:space="preserve">
     <value>導覽</value>
-    <comment>Bot command take a tour</comment>
+    <comment>Bot command take a tour. bots[0].commandLists[0].commands[0].title in manifest's translated files should match with this value.</comment>
   </data>
   <data name="BotCommandTakeATourDescription" xml:space="preserve">
     <value>主要功能導覽</value>

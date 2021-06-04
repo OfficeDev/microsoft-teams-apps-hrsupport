@@ -218,19 +218,19 @@ namespace Microsoft.Teams.Apps.AskHR.Bots
 
             string text = (message.Text ?? string.Empty).Trim().ToLower();
 
-            if (text.Equals(Resource.BotCommandAskAnExpert, StringComparison.InvariantCultureIgnoreCase) ||
+            if (text.Equals(Resource.BotCommandAskAnExpert, StringComparison.CurrentCultureIgnoreCase) ||
                 text.Equals(Constants.AskAnExpert, StringComparison.InvariantCultureIgnoreCase))
             {
                 this.telemetryClient.TrackTrace("Sending user ask an expert card");
                 await turnContext.SendActivityAsync(MessageFactory.Attachment(AskAnExpertCard.GetCard()));
             }
-            else if (text.Equals(Resource.BotCommandShare_Feedback, StringComparison.InvariantCultureIgnoreCase) ||
+            else if (text.Equals(Resource.BotCommandShare_Feedback, StringComparison.CurrentCultureIgnoreCase) ||
                 text.Equals(Constants.ShareFeedback, StringComparison.InvariantCultureIgnoreCase))
             {
                 this.telemetryClient.TrackTrace("Sending user feedback card");
                 await turnContext.SendActivityAsync(MessageFactory.Attachment(ShareFeedbackCard.GetCard()));
             }
-            else if (text.Equals(Resource.TakeATourButtonText, StringComparison.InvariantCultureIgnoreCase) ||
+            else if (text.Equals(Resource.BotCommandTakeATour, StringComparison.CurrentCultureIgnoreCase) ||
                 text.Equals(Constants.TakeATour, StringComparison.InvariantCultureIgnoreCase))
             {
                 this.telemetryClient.TrackTrace("Sending user tour card");

@@ -8,7 +8,7 @@
   "bots[0].commandLists[0].commands[0].description": "主要功能導覽",
   "bots[0].commandLists[0].commands[1].title": "詢問專家",
   "bots[0].commandLists[0].commands[1].description": "與專家聯繫",
-  "bots[0].commandLists[0].commands[2].title": "分享意見反應",
+  "bots[0].commandLists[0].commands[2].title": "分享意見反映",
   "bots[0].commandLists[0].commands[2].description": "傳送意見反應",
   "composeExtensions[0].commands[0].title": "最近",
   "composeExtensions[0].commands[0].description": "搜尋最近的要求",

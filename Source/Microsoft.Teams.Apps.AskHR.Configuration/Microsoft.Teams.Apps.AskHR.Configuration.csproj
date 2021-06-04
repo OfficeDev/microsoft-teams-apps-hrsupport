@@ -394,7 +394,7 @@
     <EmbeddedResource Include="Resources\ErrorMessages.he.resx" />
     <EmbeddedResource Include="Resources\ErrorMessages.ja.resx" />
     <EmbeddedResource Include="Resources\ErrorMessages.ko.resx" />
-    <EmbeddedResource Include="Resources\ErrorMessages.pt.resx" />
+    <EmbeddedResource Include="Resources\ErrorMessages.pt-Br.resx" />
     <EmbeddedResource Include="Resources\ErrorMessages.ru.resx" />
     <EmbeddedResource Include="Resources\ErrorMessages.zh-CN.resx" />
     <EmbeddedResource Include="Resources\ErrorMessages.zh-TW.resx" />
@@ -409,7 +409,7 @@
     <EmbeddedResource Include="Strings.he.resx" />
     <EmbeddedResource Include="Strings.ja.resx" />
     <EmbeddedResource Include="Strings.ko.resx" />
-    <EmbeddedResource Include="Strings.pt.resx" />
+    <EmbeddedResource Include="Strings.pt-BR.resx" />
     <EmbeddedResource Include="Resources\ErrorMessages.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ErrorMessages.Designer.cs</LastGenOutput>

@@ -6,7 +6,7 @@
   "staticTabs[0].name": "Suporte a RH",
   "bots[0].commandLists[0].commands[0].title": "Faça um tour",
   "bots[0].commandLists[0].commands[0].description": "Tour pelos principais recursos",
-  "bots[0].commandLists[0].commands[1].title": "Pergunte a um especialista",
+  "bots[0].commandLists[0].commands[1].title": "Pergunte a um especialista",
   "bots[0].commandLists[0].commands[1].description": "Conecte-se com um especialista",
   "bots[0].commandLists[0].commands[2].title": "Compartilhar comentários",
   "bots[0].commandLists[0].commands[2].description": "Enviar comentários",
