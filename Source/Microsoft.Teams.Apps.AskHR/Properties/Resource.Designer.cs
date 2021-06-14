@@ -187,15 +187,6 @@ namespace Microsoft.Teams.Apps.AskHR.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Connect with an expert.
-        /// </summary>
-        public static string BotCommandAskAnExpertDescription {
-            get {
-                return ResourceManager.GetString("BotCommandAskAnExpertDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Share feedback.
         /// </summary>
         public static string BotCommandShare_Feedback {
@@ -205,29 +196,11 @@ namespace Microsoft.Teams.Apps.AskHR.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Send feedback.
-        /// </summary>
-        public static string BotCommandShareFeedbackDescription {
-            get {
-                return ResourceManager.GetString("BotCommandShareFeedbackDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Take a tour.
         /// </summary>
         public static string BotCommandTakeATour {
             get {
                 return ResourceManager.GetString("BotCommandTakeATour", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Tour of key features.
-        /// </summary>
-        public static string BotCommandTakeATourDescription {
-            get {
-                return ResourceManager.GetString("BotCommandTakeATourDescription", resourceCulture);
             }
         }
         
@@ -313,69 +286,6 @@ namespace Microsoft.Teams.Apps.AskHR.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Search.
-        /// </summary>
-        public static string ComposeExtensionCommandParameter {
-            get {
-                return ResourceManager.GetString("ComposeExtensionCommandParameter", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Assigned.
-        /// </summary>
-        public static string ComposeExtensionsCommandAssigned {
-            get {
-                return ResourceManager.GetString("ComposeExtensionsCommandAssigned", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Search requests assigned to an expert.
-        /// </summary>
-        public static string ComposeExtensionsCommandAssignedDescription {
-            get {
-                return ResourceManager.GetString("ComposeExtensionsCommandAssignedDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Recent.
-        /// </summary>
-        public static string ComposeExtensionsCommandRecent {
-            get {
-                return ResourceManager.GetString("ComposeExtensionsCommandRecent", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Search recent requests.
-        /// </summary>
-        public static string ComposeExtensionsCommandRecentDescription {
-            get {
-                return ResourceManager.GetString("ComposeExtensionsCommandRecentDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Unassigned.
-        /// </summary>
-        public static string ComposeExtensionsCommandUnassigned {
-            get {
-                return ResourceManager.GetString("ComposeExtensionsCommandUnassigned", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Search unassigned requests not yet assigned to an expert.
-        /// </summary>
-        public static string ComposeExtensionsCommandUnassignedDescription {
-            get {
-                return ResourceManager.GetString("ComposeExtensionsCommandUnassignedDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Looks like a configuration issue. Please contact your System Administrator..
         /// </summary>
         public static string ConfigurationIssueMessage {
@@ -417,42 +327,6 @@ namespace Microsoft.Teams.Apps.AskHR.Properties {
         public static string DescriptionText {
             get {
                 return ResourceManager.GetString("DescriptionText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to A friendly Q&amp;A bot. If it can&apos;t find an answer, it&apos;ll offer to put you in touch with an expert from human resources..
-        /// </summary>
-        public static string EndUserManifestFullDescription {
-            get {
-                return ResourceManager.GetString("EndUserManifestFullDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to HR Support.
-        /// </summary>
-        public static string EndUserManifestName {
-            get {
-                return ResourceManager.GetString("EndUserManifestName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to A friendly HR Support bot that answers questions and connects you to experts..
-        /// </summary>
-        public static string EndUserManifestShortDescription {
-            get {
-                return ResourceManager.GetString("EndUserManifestShortDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to HR Support.
-        /// </summary>
-        public static string EndUserTabName {
-            get {
-                return ResourceManager.GetString("EndUserTabName", resourceCulture);
             }
         }
         
@@ -858,33 +732,6 @@ namespace Microsoft.Teams.Apps.AskHR.Properties {
         public static string SMEFeedbackHeaderText {
             get {
                 return ResourceManager.GetString("SMEFeedbackHeaderText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to A friendly Q&amp;A bot. If it can&apos;t find an answer, it&apos;ll offer to put you in touch with an expert from human resources..
-        /// </summary>
-        public static string SmeManifestFullDescription {
-            get {
-                return ResourceManager.GetString("SmeManifestFullDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to HR Support (Experts Team).
-        /// </summary>
-        public static string SmeManifestName {
-            get {
-                return ResourceManager.GetString("SmeManifestName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to A friendly HR Support bot that answers questions and connects you to experts..
-        /// </summary>
-        public static string SmeManifestShortDescription {
-            get {
-                return ResourceManager.GetString("SmeManifestShortDescription", resourceCulture);
             }
         }
         

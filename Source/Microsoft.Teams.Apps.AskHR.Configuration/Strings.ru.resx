@@ -117,58 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BotCommandAskAnExpert" xml:space="preserve">
-    <value>Вопрос эксперту</value>
-    <comment>Bot command ask an expert</comment>
-  </data>
-  <data name="BotCommandAskAnExpertDescription" xml:space="preserve">
-    <value>Связаться с экспертом</value>
-    <comment>Bot command ask an expert description</comment>
-  </data>
-  <data name="BotCommandShare Feedback" xml:space="preserve">
-    <value>Отправить отзыв</value>
-    <comment>Bot command share feedback</comment>
-  </data>
-  <data name="BotCommandShareFeedbackDescription" xml:space="preserve">
-    <value>Отправить отзыв</value>
-    <comment>Bot command share feedback description</comment>
-  </data>
-  <data name="BotCommandTakeATour" xml:space="preserve">
-    <value>Посмотреть обзор</value>
-    <comment>Bot command take a tour</comment>
-  </data>
-  <data name="BotCommandTakeATourDescription" xml:space="preserve">
-    <value>Обзор основных функций</value>
-    <comment>Bot command take a tour description</comment>
-  </data>
-  <data name="ComposeExtensionCommandParameter" xml:space="preserve">
-    <value>Поиск</value>
-    <comment>Compose extension command parameter search</comment>
-  </data>
-  <data name="ComposeExtensionsCommandAssigned" xml:space="preserve">
-    <value>Назначено</value>
-    <comment>Compose extension command Assigned</comment>
-  </data>
-  <data name="ComposeExtensionsCommandAssignedDescription" xml:space="preserve">
-    <value>Поиск запросов, назначенных эксперту</value>
-    <comment>Compose extension command Assigned description</comment>
-  </data>
-  <data name="ComposeExtensionsCommandRecent" xml:space="preserve">
-    <value>Последние</value>
-    <comment>Compose extension command recent</comment>
-  </data>
-  <data name="ComposeExtensionsCommandRecentDescription" xml:space="preserve">
-    <value>Поиск в последних запросах</value>
-    <comment>Compose extension command recent description</comment>
-  </data>
-  <data name="ComposeExtensionsCommandUnassigned" xml:space="preserve">
-    <value>Не назначено</value>
-    <comment>Compose extension command Unassigned</comment>
-  </data>
-  <data name="ComposeExtensionsCommandUnassignedDescription" xml:space="preserve">
-    <value>Поиск запросов, не назначенных эксперту</value>
-    <comment>Compose extension command Unassigned description</comment>
-  </data>
   <data name="DefaultHelpTabText" xml:space="preserve">
     <value>Привет! Я удобный бот для вопросов и ответов. Вы можете задавать мне вопросы, а я постараюсь ответить на них. Если я не смогу помочь, я свяжу вас с экспертом.
 
@@ -188,25 +136,6 @@
 * Что доступно прямо сейчас?</value>
     <comment>Default welcome message text to be stored in configuration app</comment>
   </data>
-  <data name="EndUserManifestFullDescription" xml:space="preserve">
-    <value>Дружелюбный бот вопросов и ответов. Если он не может найти ответ, то пытается связать вас с экспертом из отдела кадров.</value>
-    <comment>{MaxLength=4000}
-End user manifest full description</comment>
-  </data>
-  <data name="EndUserManifestName" xml:space="preserve">
-    <value>Поддержка отдела кадров</value>
-    <comment>{MaxLength=30}
-End user manifest short name</comment>
-  </data>
-  <data name="EndUserManifestShortDescription" xml:space="preserve">
-    <value>Удобный бот поддержки HR ответит на вопросы и свяжет с экспертами.</value>
-    <comment>{MaxLength=80}
-End user manifest short description</comment>
-  </data>
-  <data name="EndUserTabName" xml:space="preserve">
-    <value>Поддержка отдела кадров</value>
-    <comment>End user tab name</comment>
-  </data>
   <data name="HelpTabTextToolTipHoverMessage" xml:space="preserve">
     <value>Введите текст, который будет отображаться на вкладке "Справка" бота, а затем нажмите кнопку "ОК", чтобы добавить, или "Изменить", чтобы внести изменения</value>
     <comment>Message for help tab when information icon is hovered</comment>
@@ -214,21 +143,6 @@ End user manifest short description</comment>
   <data name="KnowledgeBaseToolTipHoverMessage" xml:space="preserve">
     <value>Укажите допустимый ИД базы знаний, который будет использоваться ботом, и нажмите кнопку "ОК", чтобы добавить, или "Изменить", чтобы внести изменения</value>
     <comment>Message for knowledgebase Id when information icon is hovered</comment>
-  </data>
-  <data name="SmeManifestFullDescription" xml:space="preserve">
-    <value>Дружелюбный бот вопросов и ответов. Если он не может найти ответ, то пытается связать вас с экспертом из отдела кадров.</value>
-    <comment>{MaxLength=4000}
-SME manifest full description</comment>
-  </data>
-  <data name="SmeManifestName" xml:space="preserve">
-    <value>Поддержка HR (эксперты)</value>
-    <comment>{MaxLength=30}
-SME manifest name</comment>
-  </data>
-  <data name="SmeManifestShortDescription" xml:space="preserve">
-    <value>Удобный бот поддержки HR ответит на вопросы и свяжет с экспертами.</value>
-    <comment>{MaxLength=80}
-SME manifest short description</comment>
   </data>
   <data name="StaticTabHRSupport" xml:space="preserve">
     <value>Служба поддержки отдела кадров</value>

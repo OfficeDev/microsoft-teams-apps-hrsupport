@@ -527,88 +527,17 @@
   </data>
   <data name="BotCommandAskAnExpert" xml:space="preserve">
     <value>전문가에게 문의</value>
-    <comment>Bot command ask an expert. bots[0].commandLists[0].commands[1].title in manifest's translated files should match with this value.</comment>
-  </data>
-  <data name="BotCommandAskAnExpertDescription" xml:space="preserve">
-    <value>전문가와 연결</value>
-    <comment>Bot command ask an expert description</comment>
+    <comment>Bot command Ask an expert.
+This needs to be match with manifest's command "Ask an expert" in translated json file.</comment>
   </data>
   <data name="BotCommandShare Feedback" xml:space="preserve">
     <value>피드백 공유</value>
-    <comment>Bot command share feedback. bots[0].commandLists[0].commands[2].title in manifest's translated files should match with this value.</comment>
-  </data>
-  <data name="BotCommandShareFeedbackDescription" xml:space="preserve">
-    <value>피드백 보내기</value>
-    <comment>Bot command share feedback description</comment>
+    <comment>Bot command Share feedback.
+This needs to be match with manifest's command "Share feedback" in translated json file.</comment>
   </data>
   <data name="BotCommandTakeATour" xml:space="preserve">
     <value>둘러보기</value>
-    <comment>Bot command take a tour. bots[0].commandLists[0].commands[0].title in manifest's translated files should match with this value.</comment>
-  </data>
-  <data name="BotCommandTakeATourDescription" xml:space="preserve">
-    <value>주요 기능 둘러보기</value>
-    <comment>Bot command take a tour description</comment>
-  </data>
-  <data name="ComposeExtensionCommandParameter" xml:space="preserve">
-    <value>검색</value>
-    <comment>Compose extension command parameter search</comment>
-  </data>
-  <data name="ComposeExtensionsCommandAssigned" xml:space="preserve">
-    <value>할당됨</value>
-    <comment>Compose extension command Assigned</comment>
-  </data>
-  <data name="ComposeExtensionsCommandAssignedDescription" xml:space="preserve">
-    <value>전문가에게 할당된 검색 요청</value>
-    <comment>Compose extension command Assigned description</comment>
-  </data>
-  <data name="ComposeExtensionsCommandRecent" xml:space="preserve">
-    <value>최근</value>
-    <comment>Compose extension command recent</comment>
-  </data>
-  <data name="ComposeExtensionsCommandRecentDescription" xml:space="preserve">
-    <value>최근 요청 검색</value>
-    <comment>Compose extension command recent description</comment>
-  </data>
-  <data name="ComposeExtensionsCommandUnassigned" xml:space="preserve">
-    <value>할당 해제됨</value>
-    <comment>Compose extension command Unassigned</comment>
-  </data>
-  <data name="ComposeExtensionsCommandUnassignedDescription" xml:space="preserve">
-    <value>검색되지 않은 요청이 전문가에 아직 할당되지 않았습니다.</value>
-    <comment>Compose extension command Unassigned description</comment>
-  </data>
-  <data name="EndUserManifestFullDescription" xml:space="preserve">
-    <value>친절한 Q&amp;A 봇. 답변을 찾을 수 없는 경우 인사 관리 전문가에게 문의할 수 있습니다.</value>
-    <comment>{MaxLength=4000}
-End user manifest full description</comment>
-  </data>
-  <data name="EndUserManifestName" xml:space="preserve">
-    <value>HR 지원</value>
-    <comment>{MaxLength=30}
-End user manifest short name</comment>
-  </data>
-  <data name="EndUserManifestShortDescription" xml:space="preserve">
-    <value>질문에 답변하고 전문가에게 연결하는 친절한 HR 지원 봇입니다.</value>
-    <comment>{MaxLength=80}
-End user manifest short description</comment>
-  </data>
-  <data name="EndUserTabName" xml:space="preserve">
-    <value>HR 지원</value>
-    <comment>End user tab name</comment>
-  </data>
-  <data name="SmeManifestFullDescription" xml:space="preserve">
-    <value>친절한 Q&amp;A 봇. 답변을 찾을 수 없는 경우 인사 관리 전문가에게 문의할 수 있습니다.</value>
-    <comment>{MaxLength=4000}
-SME manifest full description</comment>
-  </data>
-  <data name="SmeManifestName" xml:space="preserve">
-    <value>HR 지원(전문가 팀)</value>
-    <comment>{MaxLength=30}
-SME manifest name</comment>
-  </data>
-  <data name="SmeManifestShortDescription" xml:space="preserve">
-    <value>질문에 답변하고 전문가에게 연결하는 친절한 HR 지원 봇입니다.</value>
-    <comment>{MaxLength=80}
-SME manifest short description</comment>
+    <comment>Bot command Take a tour.
+This needs to be match with manifest's command "Take a tour" in translated json file.</comment>
   </data>
 </root>

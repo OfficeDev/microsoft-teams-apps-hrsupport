@@ -527,27 +527,18 @@
   </data>
   <data name="BotCommandAskAnExpert" xml:space="preserve">
     <value>שאל מומחה</value>
-    <comment>Bot command ask an expert. bots[0].commandLists[0].commands[1].title in manifest's translated files should match with this value.</comment>
-  </data>
-  <data name="BotCommandAskAnExpertDescription" xml:space="preserve">
-    <value>קישור למומחה</value>
-    <comment>Bot command ask an expert description</comment>
+    <comment>Bot command Ask an expert.
+This needs to be match with manifest's command "Ask an expert" in translated json file.</comment>
   </data>
   <data name="BotCommandShare Feedback" xml:space="preserve">
     <value>שתף משוב</value>
-    <comment>Bot command share feedback. bots[0].commandLists[0].commands[2].title in manifest's translated files should match with this value.</comment>
-  </data>
-  <data name="BotCommandShareFeedbackDescription" xml:space="preserve">
-    <value>שלח משוב</value>
-    <comment>Bot command share feedback description</comment>
+    <comment>Bot command Share feedback.
+This needs to be match with manifest's command "Share feedback" in translated json file.</comment>
   </data>
   <data name="BotCommandTakeATour" xml:space="preserve">
     <value>צא לסיור</value>
-    <comment>Bot command take a tour. bots[0].commandLists[0].commands[0].title in manifest's translated files should match with this value.</comment>
-  </data>
-  <data name="BotCommandTakeATourDescription" xml:space="preserve">
-    <value>סיבוב היכרות של תכונות מפתח</value>
-    <comment>Bot command take a tour description</comment>
+    <comment>Bot command Take a tour.
+This needs to be match with manifest's command "Take a tour" in translated json file.</comment>
   </data>
   <data name="ComposeExtensionCommandParameter" xml:space="preserve">
     <value>חפש</value>
@@ -576,39 +567,5 @@
   <data name="ComposeExtensionsCommandUnassignedDescription" xml:space="preserve">
     <value>חפש בקשות שלא הוקצו עדיין לא הוקצו למומחים</value>
     <comment>Compose extension command Unassigned description</comment>
-  </data>
-  <data name="EndUserManifestFullDescription" xml:space="preserve">
-    <value>בוט ידידותי שעונה לשאלות. אם הוא לא מוצא תשובה, הוא יציע לקשר אותך למומחה ממשאבי אנוש.</value>
-    <comment>{MaxLength=4000}
-End user manifest full description</comment>
-  </data>
-  <data name="EndUserManifestName" xml:space="preserve">
-    <value>תמיכת HR</value>
-    <comment>{MaxLength=30}
-End user manifest short name</comment>
-  </data>
-  <data name="EndUserManifestShortDescription" xml:space="preserve">
-    <value>תמיכת HR ידידותית שעונה על שאלות נפוצות ומקשרת אותך למומחים.</value>
-    <comment>{MaxLength=80}
-End user manifest short description</comment>
-  </data>
-  <data name="EndUserTabName" xml:space="preserve">
-    <value>תמיכת HR</value>
-    <comment>End user tab name</comment>
-  </data>
-  <data name="SmeManifestFullDescription" xml:space="preserve">
-    <value>בוט ידידותי שעונה לשאלות. אם הוא לא מוצא תשובה, הוא יציע לקשר אותך למומחה ממשאבי אנוש.</value>
-    <comment>{MaxLength=4000}
-SME manifest full description</comment>
-  </data>
-  <data name="SmeManifestName" xml:space="preserve">
-    <value>תמיכת HR (צוות מומחים)</value>
-    <comment>{MaxLength=30}
-SME manifest name</comment>
-  </data>
-  <data name="SmeManifestShortDescription" xml:space="preserve">
-    <value>תמיכת HR ידידותית שעונה על שאלות נפוצות ומקשרת אותך למומחים.</value>
-    <comment>{MaxLength=80}
-SME manifest short description</comment>
   </data>
 </root>

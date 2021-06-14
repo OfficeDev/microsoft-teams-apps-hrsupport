@@ -527,88 +527,17 @@
   </data>
   <data name="BotCommandAskAnExpert" xml:space="preserve">
     <value>咨询专家</value>
-    <comment>Bot command ask an expert. bots[0].commandLists[0].commands[1].title in manifest's translated files should match with this value.</comment>
-  </data>
-  <data name="BotCommandAskAnExpertDescription" xml:space="preserve">
-    <value>与专家联系</value>
-    <comment>Bot command ask an expert description</comment>
+    <comment>Bot command Ask an expert.
+This needs to be match with manifest's command "Ask an expert" in translated json file.</comment>
   </data>
   <data name="BotCommandShare Feedback" xml:space="preserve">
     <value>分享反馈</value>
-    <comment>Bot command share feedback.bots[0].commandLists[0].commands[2].title in manifest's translated files should match with this value.</comment>
-  </data>
-  <data name="BotCommandShareFeedbackDescription" xml:space="preserve">
-    <value>发送反馈</value>
-    <comment>Bot command share feedback description</comment>
+    <comment>Bot command Share feedback.
+This needs to be match with manifest's command "Share feedback" in translated json file.</comment>
   </data>
   <data name="BotCommandTakeATour" xml:space="preserve">
     <value>浏览</value>
-    <comment>Bot command take a tour. bots[0].commandLists[0].commands[0].title in manifest's translated files should match with this value.</comment>
-  </data>
-  <data name="BotCommandTakeATourDescription" xml:space="preserve">
-    <value>主要功能导览</value>
-    <comment>Bot command take a tour description</comment>
-  </data>
-  <data name="ComposeExtensionCommandParameter" xml:space="preserve">
-    <value>搜索</value>
-    <comment>Compose extension command parameter search</comment>
-  </data>
-  <data name="ComposeExtensionsCommandAssigned" xml:space="preserve">
-    <value>已分配</value>
-    <comment>Compose extension command Assigned</comment>
-  </data>
-  <data name="ComposeExtensionsCommandAssignedDescription" xml:space="preserve">
-    <value>已分配给专家的搜索请求</value>
-    <comment>Compose extension command Assigned description</comment>
-  </data>
-  <data name="ComposeExtensionsCommandRecent" xml:space="preserve">
-    <value>最近</value>
-    <comment>Compose extension command recent</comment>
-  </data>
-  <data name="ComposeExtensionsCommandRecentDescription" xml:space="preserve">
-    <value>搜索最近的请求</value>
-    <comment>Compose extension command recent description</comment>
-  </data>
-  <data name="ComposeExtensionsCommandUnassigned" xml:space="preserve">
-    <value>未分配</value>
-    <comment>Compose extension command Unassigned</comment>
-  </data>
-  <data name="ComposeExtensionsCommandUnassignedDescription" xml:space="preserve">
-    <value>搜索尚未分配给专家的未分配请求</value>
-    <comment>Compose extension command Unassigned description</comment>
-  </data>
-  <data name="EndUserManifestFullDescription" xml:space="preserve">
-    <value>友好的问答机器人。如果无法找到答案，它将帮你与人力资源专家取得联系。</value>
-    <comment>{MaxLength=4000}
-End user manifest full description</comment>
-  </data>
-  <data name="EndUserManifestName" xml:space="preserve">
-    <value>人力资源支持</value>
-    <comment>{MaxLength=30}
-End user manifest short name</comment>
-  </data>
-  <data name="EndUserManifestShortDescription" xml:space="preserve">
-    <value>友好的人力资源支持机器人将解答问题和帮你联系专家。</value>
-    <comment>{MaxLength=80}
-End user manifest short description</comment>
-  </data>
-  <data name="EndUserTabName" xml:space="preserve">
-    <value>人力资源支持</value>
-    <comment>End user tab name</comment>
-  </data>
-  <data name="SmeManifestFullDescription" xml:space="preserve">
-    <value>友好的问答机器人。如果无法找到答案，它将帮你与人力资源专家取得联系。</value>
-    <comment>{MaxLength=4000}
-SME manifest full description</comment>
-  </data>
-  <data name="SmeManifestName" xml:space="preserve">
-    <value>人力资源支持(专家团队)</value>
-    <comment>{MaxLength=30}
-SME manifest name</comment>
-  </data>
-  <data name="SmeManifestShortDescription" xml:space="preserve">
-    <value>友好的人力资源支持机器人将解答问题和帮你联系专家。</value>
-    <comment>{MaxLength=80}
-SME manifest short description</comment>
+    <comment>Bot command Take a tour.
+This needs to be match with manifest's command "Take a tour" in translated json file.</comment>
   </data>
 </root>

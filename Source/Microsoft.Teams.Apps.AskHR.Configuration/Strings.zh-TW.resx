@@ -117,58 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BotCommandAskAnExpert" xml:space="preserve">
-    <value>詢問專家</value>
-    <comment>Bot command ask an expert</comment>
-  </data>
-  <data name="BotCommandAskAnExpertDescription" xml:space="preserve">
-    <value>與專家聯繫</value>
-    <comment>Bot command ask an expert description</comment>
-  </data>
-  <data name="BotCommandShare Feedback" xml:space="preserve">
-    <value>分享意見反應</value>
-    <comment>Bot command share feedback</comment>
-  </data>
-  <data name="BotCommandShareFeedbackDescription" xml:space="preserve">
-    <value>傳送意見反應</value>
-    <comment>Bot command share feedback description</comment>
-  </data>
-  <data name="BotCommandTakeATour" xml:space="preserve">
-    <value>導覽</value>
-    <comment>Bot command take a tour</comment>
-  </data>
-  <data name="BotCommandTakeATourDescription" xml:space="preserve">
-    <value>主要功能導覽</value>
-    <comment>Bot command take a tour description</comment>
-  </data>
-  <data name="ComposeExtensionCommandParameter" xml:space="preserve">
-    <value>搜尋</value>
-    <comment>Compose extension command parameter search</comment>
-  </data>
-  <data name="ComposeExtensionsCommandAssigned" xml:space="preserve">
-    <value>已指派</value>
-    <comment>Compose extension command Assigned</comment>
-  </data>
-  <data name="ComposeExtensionsCommandAssignedDescription" xml:space="preserve">
-    <value>搜尋已指派給專家的要求</value>
-    <comment>Compose extension command Assigned description</comment>
-  </data>
-  <data name="ComposeExtensionsCommandRecent" xml:space="preserve">
-    <value>最近</value>
-    <comment>Compose extension command recent</comment>
-  </data>
-  <data name="ComposeExtensionsCommandRecentDescription" xml:space="preserve">
-    <value>搜尋最近的要求</value>
-    <comment>Compose extension command recent description</comment>
-  </data>
-  <data name="ComposeExtensionsCommandUnassigned" xml:space="preserve">
-    <value>未指派</value>
-    <comment>Compose extension command Unassigned</comment>
-  </data>
-  <data name="ComposeExtensionsCommandUnassignedDescription" xml:space="preserve">
-    <value>搜尋尚未指派給專家的未指派要求</value>
-    <comment>Compose extension command Unassigned description</comment>
-  </data>
   <data name="DefaultHelpTabText" xml:space="preserve">
     <value>您好，我是友善的問與答 Bot。您可以詢問我問題，我會盡力回答。如果我無法提供協助，我會請專家與您接洽。
 
@@ -188,25 +136,6 @@
 * 目前可在這裡使用哪些功能?</value>
     <comment>Default welcome message text to be stored in configuration app</comment>
   </data>
-  <data name="EndUserManifestFullDescription" xml:space="preserve">
-    <value>友善的問與答 Bot。如果找不到解答，它將會讓您與人力資源專家聯繫。</value>
-    <comment>{MaxLength=4000}
-End user manifest full description</comment>
-  </data>
-  <data name="EndUserManifestName" xml:space="preserve">
-    <value>人力資源支援</value>
-    <comment>{MaxLength=30}
-End user manifest short name</comment>
-  </data>
-  <data name="EndUserManifestShortDescription" xml:space="preserve">
-    <value>友善的人力資源支援 Bot，能回答問題並讓您與專家聯繫。</value>
-    <comment>{MaxLength=80}
-End user manifest short description</comment>
-  </data>
-  <data name="EndUserTabName" xml:space="preserve">
-    <value>人力資源支援</value>
-    <comment>End user tab name</comment>
-  </data>
   <data name="HelpTabTextToolTipHoverMessage" xml:space="preserve">
     <value>提供會在 Bot 的 [說明] 索引標籤中顯示的文字，然後按一下 [確定] 以新增或 [編輯] 來修改</value>
     <comment>Message for help tab when information icon is hovered</comment>
@@ -214,21 +143,6 @@ End user manifest short description</comment>
   <data name="KnowledgeBaseToolTipHoverMessage" xml:space="preserve">
     <value>提供將由 Bot 使用的有效知識庫識別碼，然後按一下 [確定] 以新增或 [編輯] 來修改</value>
     <comment>Message for knowledgebase Id when information icon is hovered</comment>
-  </data>
-  <data name="SmeManifestFullDescription" xml:space="preserve">
-    <value>友善的問與答 Bot。如果找不到解答，它將會讓您與人力資源專家聯繫。</value>
-    <comment>{MaxLength=4000}
-SME manifest full description</comment>
-  </data>
-  <data name="SmeManifestName" xml:space="preserve">
-    <value>人力資源支援 (專家團隊)</value>
-    <comment>{MaxLength=30}
-SME manifest name</comment>
-  </data>
-  <data name="SmeManifestShortDescription" xml:space="preserve">
-    <value>友善的人力資源支援 Bot，能回答問題並讓您與專家聯繫。</value>
-    <comment>{MaxLength=80}
-SME manifest short description</comment>
   </data>
   <data name="StaticTabHRSupport" xml:space="preserve">
     <value>人力資源支援</value>

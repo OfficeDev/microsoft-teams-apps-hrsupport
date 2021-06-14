@@ -117,58 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BotCommandAskAnExpert" xml:space="preserve">
-    <value>שאל מומחה</value>
-    <comment>Bot command ask an expert</comment>
-  </data>
-  <data name="BotCommandAskAnExpertDescription" xml:space="preserve">
-    <value>קשר למומחה</value>
-    <comment>Bot command ask an expert description</comment>
-  </data>
-  <data name="BotCommandShare Feedback" xml:space="preserve">
-    <value>שתף משוב</value>
-    <comment>Bot command share feedback</comment>
-  </data>
-  <data name="BotCommandShareFeedbackDescription" xml:space="preserve">
-    <value>שלח משוב</value>
-    <comment>Bot command share feedback description</comment>
-  </data>
-  <data name="BotCommandTakeATour" xml:space="preserve">
-    <value>צא לסיור</value>
-    <comment>Bot command take a tour</comment>
-  </data>
-  <data name="BotCommandTakeATourDescription" xml:space="preserve">
-    <value>סיבוב היכרות של תכונות מפתח</value>
-    <comment>Bot command take a tour description</comment>
-  </data>
-  <data name="ComposeExtensionCommandParameter" xml:space="preserve">
-    <value>חפש</value>
-    <comment>Compose extension command parameter search</comment>
-  </data>
-  <data name="ComposeExtensionsCommandAssigned" xml:space="preserve">
-    <value>הוקצה</value>
-    <comment>Compose extension command Assigned</comment>
-  </data>
-  <data name="ComposeExtensionsCommandAssignedDescription" xml:space="preserve">
-    <value>חפש בקשות שהוקצו למומחה</value>
-    <comment>Compose extension command Assigned description</comment>
-  </data>
-  <data name="ComposeExtensionsCommandRecent" xml:space="preserve">
-    <value>מהזמן האחרון</value>
-    <comment>Compose extension command recent</comment>
-  </data>
-  <data name="ComposeExtensionsCommandRecentDescription" xml:space="preserve">
-    <value>חפש בקשות מהזמן האחרון</value>
-    <comment>Compose extension command recent description</comment>
-  </data>
-  <data name="ComposeExtensionsCommandUnassigned" xml:space="preserve">
-    <value>לא הוקצה</value>
-    <comment>Compose extension command Unassigned</comment>
-  </data>
-  <data name="ComposeExtensionsCommandUnassignedDescription" xml:space="preserve">
-    <value>חפש בקשות שלא הוקצו עדיין לא הוקצו למומחים</value>
-    <comment>Compose extension command Unassigned description</comment>
-  </data>
   <data name="DefaultHelpTabText" xml:space="preserve">
     <value>שלום, אני בוט השאלות והתשובות הידידותי שלך. באפשרותך לשאול אותי שאלות ואני אעשה כמיטב יכולתי לענות. במקרים בהם אין באפשרותי לעזור, אקשר אותך עם מומחה.
 
@@ -188,25 +136,6 @@
 * אילו דברים זמינים כאן רגע זה?</value>
     <comment>Default welcome message text to be stored in configuration app</comment>
   </data>
-  <data name="EndUserManifestFullDescription" xml:space="preserve">
-    <value>בוט שאלות ותשובות ידידותי. אם הוא לא יכול למצוא תשובה, הוא יציע לחבר אותף למומחה ממשאבי אנוש.</value>
-    <comment>{MaxLength=4000}
-End user manifest full description</comment>
-  </data>
-  <data name="EndUserManifestName" xml:space="preserve">
-    <value>תמיכת HR</value>
-    <comment>{MaxLength=30}
-End user manifest short name</comment>
-  </data>
-  <data name="EndUserManifestShortDescription" xml:space="preserve">
-    <value>תמיכת HR ידידותית שעונה על שאלות נפוצות ומקשרת אותך למומחים.</value>
-    <comment>{MaxLength=80}
-End user manifest short description</comment>
-  </data>
-  <data name="EndUserTabName" xml:space="preserve">
-    <value>תמיכת HR</value>
-    <comment>End user tab name</comment>
-  </data>
   <data name="HelpTabTextToolTipHoverMessage" xml:space="preserve">
     <value>ספק טקסט שיוצג בכרטיסיה ' עזרה ' של הבוט ולאחר מכן לחץ על ' אישור ' כדי להוסיף או לערוך כדי לשנות</value>
     <comment>Message for help tab when information icon is hovered</comment>
@@ -214,21 +143,6 @@ End user manifest short description</comment>
   <data name="KnowledgeBaseToolTipHoverMessage" xml:space="preserve">
     <value>ספק מזהה בסיס ידע חוקי שהבוט ישתמש בו ולאחר מכן לחץ על 'אישור' כדי להוסיף או לערוך כדי לשנות</value>
     <comment>Message for knowledgebase Id when information icon is hovered</comment>
-  </data>
-  <data name="SmeManifestFullDescription" xml:space="preserve">
-    <value>בוט שאלות ותשובות ידידותי. אם הוא לא יכול למצוא תשובה, הוא יציע לחבר אותף למומחה ממשאבי אנוש.</value>
-    <comment>{MaxLength=4000}
-SME manifest full description</comment>
-  </data>
-  <data name="SmeManifestName" xml:space="preserve">
-    <value>תמיכת HR (צוות מומחים)</value>
-    <comment>{MaxLength=30}
-SME manifest name</comment>
-  </data>
-  <data name="SmeManifestShortDescription" xml:space="preserve">
-    <value>תמיכת HR ידידותית שעונה על שאלות נפוצות ומקשרת אותך למומחים.</value>
-    <comment>{MaxLength=80}
-SME manifest short description</comment>
   </data>
   <data name="StaticTabHRSupport" xml:space="preserve">
     <value>תמיכת HR</value>

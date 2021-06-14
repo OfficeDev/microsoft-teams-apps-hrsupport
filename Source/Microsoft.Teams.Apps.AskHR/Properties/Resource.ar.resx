@@ -527,88 +527,17 @@
   </data>
   <data name="BotCommandAskAnExpert" xml:space="preserve">
     <value>اسأل خبيراً</value>
-    <comment>Bot command ask an expert. bots[0].commandLists[0].commands[1].title in manifest's translated files should match with this value.</comment>
-  </data>
-  <data name="BotCommandAskAnExpertDescription" xml:space="preserve">
-    <value>التواصل مع خبير</value>
-    <comment>Bot command ask an expert description</comment>
+    <comment>Bot command Ask an expert.
+This needs to be match with manifest's command "Ask an expert" in translated json file.</comment>
   </data>
   <data name="BotCommandShare Feedback" xml:space="preserve">
     <value>مشاركة ملاحظات</value>
-    <comment>Bot command share feedback. bots[0].commandLists[0].commands[2].title in manifest's translated files should match with this value.</comment>
-  </data>
-  <data name="BotCommandShareFeedbackDescription" xml:space="preserve">
-    <value>إرسال ملاحظات</value>
-    <comment>Bot command share feedback description</comment>
+    <comment>Bot command Share feedback.
+This needs to be match with manifest's command "Share feedback" in translated json file.</comment>
   </data>
   <data name="BotCommandTakeATour" xml:space="preserve">
     <value>القيام بجولة</value>
-    <comment>Bot command take a tour. bots[0].commandLists[0].commands[0].title in manifest's translated files should match with this value.</comment>
-  </data>
-  <data name="BotCommandTakeATourDescription" xml:space="preserve">
-    <value>جولة للتعرّف على الميزات الأساسية</value>
-    <comment>Bot command take a tour description</comment>
-  </data>
-  <data name="ComposeExtensionCommandParameter" xml:space="preserve">
-    <value>بحث</value>
-    <comment>Compose extension command parameter search</comment>
-  </data>
-  <data name="ComposeExtensionsCommandAssigned" xml:space="preserve">
-    <value>معيّن</value>
-    <comment>Compose extension command Assigned</comment>
-  </data>
-  <data name="ComposeExtensionsCommandAssignedDescription" xml:space="preserve">
-    <value>بحث في الطلبات المعيّنة إلى خبير</value>
-    <comment>Compose extension command Assigned description</comment>
-  </data>
-  <data name="ComposeExtensionsCommandRecent" xml:space="preserve">
-    <value>العناصر الأخيرة</value>
-    <comment>Compose extension command recent</comment>
-  </data>
-  <data name="ComposeExtensionsCommandRecentDescription" xml:space="preserve">
-    <value>بحث في الطلبات الأخيرة</value>
-    <comment>Compose extension command recent description</comment>
-  </data>
-  <data name="ComposeExtensionsCommandUnassigned" xml:space="preserve">
-    <value>غير معيّن</value>
-    <comment>Compose extension command Unassigned</comment>
-  </data>
-  <data name="ComposeExtensionsCommandUnassignedDescription" xml:space="preserve">
-    <value>بحث في الطلبات غير المعينة بعد إلى خبير</value>
-    <comment>Compose extension command Unassigned description</comment>
-  </data>
-  <data name="EndUserManifestFullDescription" xml:space="preserve">
-    <value>روبوت س&amp;ج سهل الاستخدام. إذا لم يتمكن من العثور على إجالة، فسوف يعرض عليك الاتصال بخبير من قسم الموارد البشرية.</value>
-    <comment>{MaxLength=4000}
-End user manifest full description</comment>
-  </data>
-  <data name="EndUserManifestName" xml:space="preserve">
-    <value>دعم الموارد البشرية</value>
-    <comment>{MaxLength=30}
-End user manifest short name</comment>
-  </data>
-  <data name="EndUserManifestShortDescription" xml:space="preserve">
-    <value>روبوت سهل الاستخدام لدعم الموارد البشرية، يجيب عن الأسئلة ويوصّلك بالخبراء.</value>
-    <comment>{MaxLength=80}
-End user manifest short description</comment>
-  </data>
-  <data name="EndUserTabName" xml:space="preserve">
-    <value>دعم الموارد البشرية</value>
-    <comment>End user tab name</comment>
-  </data>
-  <data name="SmeManifestFullDescription" xml:space="preserve">
-    <value>روبوت س&amp;ج سهل الاستخدام. إذا لم يتمكن من العثور على إجالة، فسوف يعرض عليك الاتصال بخبير من قسم الموارد البشرية.</value>
-    <comment>{MaxLength=4000}
-SME manifest full description</comment>
-  </data>
-  <data name="SmeManifestName" xml:space="preserve">
-    <value>دعم القوى البشرية - فريق خبراء</value>
-    <comment>{MaxLength=30}
-SME manifest name</comment>
-  </data>
-  <data name="SmeManifestShortDescription" xml:space="preserve">
-    <value>روبوت سهل الاستخدام لدعم الموارد البشرية، يجيب عن الأسئلة ويوصّلك بالخبراء.</value>
-    <comment>{MaxLength=80}
-SME manifest short description</comment>
+    <comment>Bot command Take a tour.
+This needs to be match with manifest's command "Take a tour" in translated json file.</comment>
   </data>
 </root>
