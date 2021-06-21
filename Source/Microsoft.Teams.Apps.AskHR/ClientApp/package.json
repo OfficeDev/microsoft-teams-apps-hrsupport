@@ -7,6 +7,7 @@
     "@babel/preset-env": "^7.6.2",
     "@microsoft/applicationinsights-react-js": "^2.2.2",
     "@microsoft/applicationinsights-web": "^2.2.2",
+    "i18next": "^20.2.1",
     "react": "^16.9.0",
     "react-appinsights": "^3.0.0-rc.6",
     "react-dom": "^16.9.0",

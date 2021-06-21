@@ -387,14 +387,41 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\ErrorMessages.ar.resx" />
+    <EmbeddedResource Include="Resources\ErrorMessages.de.resx" />
+    <EmbeddedResource Include="Resources\ErrorMessages.es.resx" />
+    <EmbeddedResource Include="Resources\ErrorMessages.fr.resx" />
+    <EmbeddedResource Include="Resources\ErrorMessages.he.resx" />
+    <EmbeddedResource Include="Resources\ErrorMessages.ja.resx" />
+    <EmbeddedResource Include="Resources\ErrorMessages.ko.resx" />
+    <EmbeddedResource Include="Resources\ErrorMessages.pt-Br.resx" />
+    <EmbeddedResource Include="Resources\ErrorMessages.ru.resx" />
+    <EmbeddedResource Include="Resources\ErrorMessages.zh-CN.resx" />
+    <EmbeddedResource Include="Resources\ErrorMessages.zh-TW.resx" />
+    <EmbeddedResource Include="Strings.ar.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strings.de.resx" />
+    <EmbeddedResource Include="Strings.es.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strings.fr.resx" />
+    <EmbeddedResource Include="Strings.he.resx" />
+    <EmbeddedResource Include="Strings.ja.resx" />
+    <EmbeddedResource Include="Strings.ko.resx" />
+    <EmbeddedResource Include="Strings.pt-BR.resx" />
     <EmbeddedResource Include="Resources\ErrorMessages.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ErrorMessages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Strings.ru.resx" />
     <EmbeddedResource Include="Strings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Strings.zh-CN.resx" />
+    <EmbeddedResource Include="Strings.zh-TW.resx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Teams.Apps.AskHR.Common\Microsoft.Teams.Apps.AskHR.Common.csproj">
@@ -423,7 +450,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>59395</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:59395/</IISUrl>
+          <IISUrl>http://localhost:5000</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

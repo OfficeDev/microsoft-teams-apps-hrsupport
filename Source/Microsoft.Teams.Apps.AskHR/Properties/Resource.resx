@@ -525,4 +525,19 @@ My key features:
     <value>TenantId</value>
     <comment>Tenant Id</comment>
   </data>
+  <data name="BotCommandAskAnExpert" xml:space="preserve">
+    <value>Ask an expert</value>
+    <comment>Bot command Ask an expert.
+This needs to be match with manifest's command "Ask an expert" in translated json file.</comment>
+  </data>
+  <data name="BotCommandShare Feedback" xml:space="preserve">
+    <value>Share feedback</value>
+    <comment>Bot command Share feedback.
+This needs to be match with manifest's command "Share feedback" in translated json file.</comment>
+  </data>
+  <data name="BotCommandTakeATour" xml:space="preserve">
+    <value>Take a tour</value>
+    <comment>Bot command Take a tour.
+This needs to be match with manifest's command "Take a tour" in translated json file.</comment>
+  </data>
 </root>

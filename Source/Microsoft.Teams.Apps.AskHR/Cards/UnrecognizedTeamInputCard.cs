@@ -6,7 +6,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
 {
     using System.Collections.Generic;
     using Microsoft.Bot.Schema;
-    using Microsoft.Teams.Apps.AskHR.Bots;
+    using Microsoft.Teams.Apps.AskHR.Common;
     using Microsoft.Teams.Apps.AskHR.Properties;
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                     {
                         Title = Resource.TakeATeamTourButtonText,
                         DisplayText = Resource.TakeATeamTourButtonText,
-                        Text = AskHRBot.TeamTour,
+                        Text = Constants.TeamTour,
                     }
                 }
             };

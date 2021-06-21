@@ -4,12 +4,16 @@
 
 namespace Microsoft.Teams.Apps.AskHR
 {
+    using System.Collections.Generic;
+    using System.Globalization;
     using System.IO;
+    using System.Linq;
     using Microsoft.ApplicationInsights;
     using Microsoft.AspNetCore.Authentication;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Localization;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Bot.Builder;
     using Microsoft.Bot.Builder.Integration.AspNet.Core;
@@ -74,6 +78,26 @@ namespace Microsoft.Teams.Apps.AskHR
             services.AddSingleton<MessagingExtension>();
             services.AddMemoryCache();
 
+            // Add i18n.
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                var defaultCulture = CultureInfo.GetCultureInfo(this.Configuration["i18n:DefaultCulture"]);
+                var supportedCultures = this.Configuration["i18n:SupportedCultures"].Split(',')
+                    .Select(culture => CultureInfo.GetCultureInfo(culture))
+                    .ToList();
+
+                options.DefaultRequestCulture = new RequestCulture(defaultCulture);
+                options.SupportedCultures = supportedCultures;
+                options.SupportedUICultures = supportedCultures;
+
+                options.RequestCultureProviders = new List<IRequestCultureProvider>
+                {
+                    new BotLocalizationCultureProvider(),
+                };
+            });
+
             services.AddSingleton<IConfigurationManager<OpenIdConnectConfiguration>>(
                 new ConfigurationManager<OpenIdConnectConfiguration>(
                     $"https://login.microsoftonline.com/{this.Configuration["TenantId"]}/.well-known/openid-configuration",
@@ -92,6 +116,7 @@ namespace Microsoft.Teams.Apps.AskHR
         /// <param name="env">Hosting Environment.</param>
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseRequestLocalization();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

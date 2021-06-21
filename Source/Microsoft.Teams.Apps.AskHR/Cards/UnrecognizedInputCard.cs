@@ -5,9 +5,10 @@
 namespace Microsoft.Teams.Apps.AskHR.Cards
 {
     using System.Collections.Generic;
+    using System.Globalization;
     using AdaptiveCards;
     using Microsoft.Bot.Schema;
-    using Microsoft.Teams.Apps.AskHR.Bots;
+    using Microsoft.Teams.Apps.AskHR.Common;
     using Microsoft.Teams.Apps.AskHR.Models;
     using Microsoft.Teams.Apps.AskHR.Properties;
 
@@ -24,6 +25,8 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
         /// <returns>UnrecognizedInput Card.</returns>
         public static Attachment GetCard(string userQuestion, string cardMessage)
         {
+            var textAlignment = CultureInfo.CurrentCulture.TextInfo.IsRightToLeft ? AdaptiveHorizontalAlignment.Right : AdaptiveHorizontalAlignment.Left;
+
             AdaptiveCard unrecognizedInputCard = new AdaptiveCard("1.0")
             {
                 Body = new List<AdaptiveElement>
@@ -31,7 +34,8 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                     new AdaptiveTextBlock
                     {
                         Text = cardMessage,
-                        Wrap = true
+                        Wrap = true,
+                        HorizontalAlignment = textAlignment
                     }
                 },
                 Actions = new List<AdaptiveAction>
@@ -45,7 +49,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                             {
                                 Type = ActionTypes.MessageBack,
                                 DisplayText = Resource.AskAnExpertDisplayText,
-                                Text = AskHRBot.AskAnExpert
+                                Text = Constants.AskAnExpert,
                             },
                             UserQuestion = userQuestion
                         },
@@ -59,7 +63,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                             {
                                 Type = ActionTypes.MessageBack,
                                 DisplayText = Resource.ShareFeedbackDisplayText,
-                                Text = AskHRBot.ShareFeedback,
+                                Text = Constants.ShareFeedback,
                             }
                         }
                     }

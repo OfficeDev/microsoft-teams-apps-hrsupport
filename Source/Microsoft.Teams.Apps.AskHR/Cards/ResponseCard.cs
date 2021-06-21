@@ -5,9 +5,10 @@
 namespace Microsoft.Teams.Apps.AskHR.Cards
 {
     using System.Collections.Generic;
+    using System.Globalization;
     using AdaptiveCards;
     using Microsoft.Bot.Schema;
-    using Microsoft.Teams.Apps.AskHR.Bots;
+    using Microsoft.Teams.Apps.AskHR.Common;
     using Microsoft.Teams.Apps.AskHR.Models;
     using Microsoft.Teams.Apps.AskHR.Properties;
 
@@ -25,6 +26,8 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
         /// <returns>Response card.</returns>
         public static Attachment GetCard(string question, string answer, string userQuestion)
         {
+            var textAlignment = CultureInfo.CurrentCulture.TextInfo.IsRightToLeft ? AdaptiveHorizontalAlignment.Right : AdaptiveHorizontalAlignment.Left;
+
             AdaptiveCard responseCard = new AdaptiveCard("1.0")
             {
                 Body = new List<AdaptiveElement>
@@ -34,16 +37,19 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                         Weight = AdaptiveTextWeight.Bolder,
                         Text = Resource.ResponseHeaderText,
                         Wrap = true,
+                        HorizontalAlignment = textAlignment
                     },
                     new AdaptiveTextBlock
                     {
                         Text = question,
                         Wrap = true,
+                        HorizontalAlignment = textAlignment
                     },
                     new AdaptiveTextBlock
                     {
                         Text = answer,
                         Wrap = true,
+                        HorizontalAlignment = textAlignment
                     }
                 },
                 Actions = new List<AdaptiveAction>
@@ -57,7 +63,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                             {
                                 Type = ActionTypes.MessageBack,
                                 DisplayText = Resource.AskAnExpertDisplayText,
-                                Text = AskHRBot.AskAnExpert,
+                                Text = Constants.AskAnExpert,
                             },
                             UserQuestion = userQuestion,
                             KnowledgeBaseAnswer = answer,
@@ -72,7 +78,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                             {
                                 Type = ActionTypes.MessageBack,
                                 DisplayText = Resource.ShareFeedbackDisplayText,
-                                Text = AskHRBot.ShareFeedback,
+                                Text = Constants.ShareFeedback,
                             },
                             UserQuestion = userQuestion,
                             KnowledgeBaseAnswer = answer,

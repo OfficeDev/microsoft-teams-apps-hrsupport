@@ -1,0 +1,22 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
+  "name.short": "人力资源支持(专家团队)",
+  "description.short": "友好的人力资源支持机器人将解答问题和帮你联系专家。",
+  "description.full": "友好的问答机器人。如果无法找到答案，它将帮你与人力资源专家取得联系。",
+  "staticTabs[0].name": "人力资源支持",
+  "bots[0].commandLists[0].commands[0].title": "浏览",
+  "bots[0].commandLists[0].commands[0].description": "主要功能导览",
+  "bots[0].commandLists[0].commands[1].title": "咨询专家",
+  "bots[0].commandLists[0].commands[1].description": "与专家联系",
+  "bots[0].commandLists[0].commands[2].title": "分享反馈",
+  "bots[0].commandLists[0].commands[2].description": "发送反馈",
+  "composeExtensions[0].commands[0].title": "最近",
+  "composeExtensions[0].commands[0].description": "搜索最近的请求",
+  "composeExtensions[0].commands[0].parameters[0].title": "搜索",
+  "composeExtensions[0].commands[1].title": "未分配",
+  "composeExtensions[0].commands[1].description": "搜索尚未分配给专家的未分配请求",
+  "composeExtensions[0].commands[1].parameters[0].title": "搜索",
+  "composeExtensions[0].commands[2].title": "已分配",
+  "composeExtensions[0].commands[2].description": "已分配给专家的搜索请求",
+  "composeExtensions[0].commands[2].parameters[0].title": "搜索"
+}

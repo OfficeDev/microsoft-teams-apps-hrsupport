@@ -6,8 +6,10 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using AdaptiveCards;
     using Microsoft.Bot.Schema;
+    using Microsoft.Teams.Apps.AskHR.Common;
     using Microsoft.Teams.Apps.AskHR.Models;
     using Microsoft.Teams.Apps.AskHR.Properties;
 
@@ -16,11 +18,6 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
     /// </summary>
     public static class ShareFeedbackCard
     {
-        /// <summary>
-        /// Text associated with share feedback command
-        /// </summary>
-        public const string ShareFeedbackSubmitText = "ShareFeedback";
-
         /// <summary>
         /// This method will construct the card for share feedback, when invoked from the bot menu.
         /// </summary>
@@ -64,6 +61,9 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
         /// <returns>Share feedback card.</returns>
         private static Attachment GetCard(bool showValidationErrors, ShareFeedbackCardPayload data)
         {
+            var textAlignment = CultureInfo.CurrentCulture.TextInfo.IsRightToLeft ? AdaptiveHorizontalAlignment.Right : AdaptiveHorizontalAlignment.Left;
+            var errorAlignment = CultureInfo.CurrentCulture.TextInfo.IsRightToLeft ? AdaptiveHorizontalAlignment.Left : AdaptiveHorizontalAlignment.Right;
+
             AdaptiveCard shareFeedbackCard = new AdaptiveCard("1.0")
             {
                 Body = new List<AdaptiveElement>
@@ -73,7 +73,8 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                         Weight = AdaptiveTextWeight.Bolder,
                         Text = !string.IsNullOrWhiteSpace(data.UserQuestion) ? Resource.ResultsFeedbackText : Resource.ShareFeedbackTitleText,
                         Size = AdaptiveTextSize.Large,
-                        Wrap = true
+                        Wrap = true,
+                        HorizontalAlignment = textAlignment
                     },
                     new AdaptiveColumnSet
                     {
@@ -87,7 +88,8 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                                     new AdaptiveTextBlock
                                     {
                                         Text = Resource.FeedbackRatingRequired,
-                                        Wrap = true
+                                        Wrap = true,
+                                        HorizontalAlignment = textAlignment
                                     }
                                 }
                             },
@@ -99,7 +101,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                                     {
                                         Text = (showValidationErrors && !Enum.TryParse(data.Rating, out FeedbackRating rating)) ? Resource.RatingMandatoryText : string.Empty,
                                         Color = AdaptiveTextColor.Attention,
-                                        HorizontalAlignment = AdaptiveHorizontalAlignment.Right,
+                                        HorizontalAlignment = errorAlignment,
                                         Wrap = true
                                     }
                                 }
@@ -134,6 +136,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                     {
                         Text = Resource.DescriptionText,
                         Wrap = true,
+                        HorizontalAlignment = textAlignment
                     },
                     new AdaptiveTextInput
                     {
@@ -155,7 +158,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                             {
                                 Type = ActionTypes.MessageBack,
                                 DisplayText = Resource.ShareFeedbackDisplayText,
-                                Text = ShareFeedbackSubmitText,
+                                Text = Constants.ShareFeedbackSubmitText,
                             },
                             UserQuestion = data.UserQuestion,
                             KnowledgeBaseAnswer = data.KnowledgeBaseAnswer,

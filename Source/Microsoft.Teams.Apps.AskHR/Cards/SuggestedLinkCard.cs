@@ -6,10 +6,11 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using AdaptiveCards;
     using Microsoft.Bot.Builder;
     using Microsoft.Bot.Schema;
-    using Microsoft.Teams.Apps.AskHR.Bots;
+    using Microsoft.Teams.Apps.AskHR.Common;
     using Microsoft.Teams.Apps.AskHR.Common.Models;
     using Microsoft.Teams.Apps.AskHR.Models;
     using Microsoft.Teams.Apps.AskHR.Properties;
@@ -28,6 +29,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
         /// <returns>Suggested Tab Card.</returns>
         public static Attachment GetCard(string userQuestion, HelpInfoEntity tile, string cardMessage)
         {
+            var textAlignment = CultureInfo.CurrentCulture.TextInfo.IsRightToLeft ? AdaptiveHorizontalAlignment.Right : AdaptiveHorizontalAlignment.Left;
             Uri imageUrl = new Uri(tile.ImageUrl != null ? tile.ImageUrl : " ", UriKind.RelativeOrAbsolute);
             Uri redirectUrl = new Uri(tile.RedirectUrl != null ? tile.RedirectUrl : " ", UriKind.RelativeOrAbsolute);
 
@@ -38,7 +40,8 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                     new AdaptiveTextBlock
                     {
                         Text = cardMessage,
-                        Wrap = true
+                        Wrap = true,
+                        HorizontalAlignment = textAlignment
                     },
                     new AdaptiveContainer
                     {
@@ -48,7 +51,8 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                             {
                                 Text = tile.Title,
                                 Wrap = true,
-                                Weight = AdaptiveTextWeight.Bolder
+                                Weight = AdaptiveTextWeight.Bolder,
+                                HorizontalAlignment = textAlignment
                             },
                             new AdaptiveImage
                             {
@@ -63,7 +67,8 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                             {
                                 Text = tile.Description,
                                 Wrap = true,
-                                MaxLines = 3
+                                MaxLines = 3,
+                                HorizontalAlignment = textAlignment
                             }
                         }
                     }
@@ -84,7 +89,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                             {
                                 Type = ActionTypes.MessageBack,
                                 DisplayText = Resource.AskAnExpertDisplayText,
-                                Text = AskHRBot.AskAnExpert
+                                Text = Constants.AskAnExpert,
                             },
                             UserQuestion = userQuestion
                         },
@@ -98,7 +103,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                             {
                                 Type = ActionTypes.MessageBack,
                                 DisplayText = Resource.ShareFeedbackDisplayText,
-                                Text = AskHRBot.ShareFeedback,
+                                Text = Constants.ShareFeedback,
                             }
                         }
                     }

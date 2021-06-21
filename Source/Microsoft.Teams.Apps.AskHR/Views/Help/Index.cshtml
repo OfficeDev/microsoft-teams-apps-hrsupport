@@ -1,11 +1,17 @@
 ﻿@using Microsoft.Teams.Apps.AskHR.Properties
+@using System.Globalization
+@using System.Threading;
+@{
+	Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(ViewBag.locale);
+}
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
-    <title>AskHR Help</title>
+    <title>@Resource.SignInTitleText</title>
 
     <script src="~/lib/microsoft-teams/dist/MicrosoftTeams.js"></script>
     <script src="~/lib/adal-angular/dist/adal.min.js"></script>
@@ -19,7 +25,7 @@
 			navigateToLoginRequestUri: false
 		};
 
-        function initialize() {
+		function initialize() {
 			microsoftTeams.initialize();
 			microsoftTeams.getContext(function (context) {
 				this.upn = context.upn;
@@ -88,7 +94,7 @@
 </head>
 <body onload="initialize()">
     <div class="loginSection" id="signInSection" style="display:none">
-        <img src="~/Content/HRSupportLoginImage.png" class="askHRLogoImg" alt="ask HR Logo"/>
+        <img src="~/Content/HRSupportLoginImage.png" class="askHRLogoImg" alt="ask HR Logo" />
         <div class="loginText">@Resource.loginText</div>
         <div class="askHRAppDescription">@Resource.askHRAppDescription</div>
         <input class="loginBtn" title="@Resource.LoginButtonTitleText" type="button" id="btnLogin" value="@Resource.LoginButtonText" onclick="login()" />

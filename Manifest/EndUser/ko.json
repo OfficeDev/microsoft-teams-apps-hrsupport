@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
+  "name.short": "HR 지원",
+  "description.short": "질문에 답변하고 전문가에게 연결하는 친절한 HR 지원 봇입니다.",
+  "description.full": "친절한 Q&A 봇. 답변을 찾을 수 없는 경우 인사 관리 전문가에게 문의할 수 있습니다.",
+  "staticTabs[0].name": "HR 지원",
+  "bots[0].commandLists[0].commands[0].title": "둘러보기",
+  "bots[0].commandLists[0].commands[0].description": "주요 기능 둘러보기",
+  "bots[0].commandLists[0].commands[1].title": "전문가에게 문의",
+  "bots[0].commandLists[0].commands[1].description": "전문가와 연결",
+  "bots[0].commandLists[0].commands[2].title": "피드백 공유",
+  "bots[0].commandLists[0].commands[2].description": "피드백 보내기"
+}

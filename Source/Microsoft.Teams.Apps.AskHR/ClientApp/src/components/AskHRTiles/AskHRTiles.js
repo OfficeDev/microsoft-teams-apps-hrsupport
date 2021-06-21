@@ -3,9 +3,8 @@ import AskHRTile from './AskHRTile/AskHR';
 import './AskHRTiles.css';
 import * as microsoftTeams from '@microsoft/teams-js';
 import { createBrowserHistory } from "history";
-import { SeverityLevel } from '@microsoft/applicationinsights-web';
-import { Router, Route, Link } from "react-router-dom";
 import { ai } from '../Telemetry/TrackTelemetry';
+import i18next from 'i18next';
 
 //contains the record for click event of tile
 const history = createBrowserHistory({ basename: '' });
@@ -16,7 +15,8 @@ class AskHRTiles extends Component {
         askHRTabData: [],
         hasData: false,
         noDataAvailableMessage: "",
-        error: null
+        error: null,
+        isCultureRightToLeft: false
     }
 
     componentWillMount() {
@@ -30,10 +30,11 @@ class AskHRTiles extends Component {
         //// Call the initialize API first
         microsoftTeams.initialize();
 
-        //// Check the initial theme user chose and respect it
+        //// Check the initial theme and locale user chose and respect it
         microsoftTeams.getContext((context) => {
             if (context && context.theme) {
                 this.setTheme(context.theme);
+                this.setCultureDirection(context.locale);
             }
         });
 
@@ -42,6 +43,7 @@ class AskHRTiles extends Component {
             this.setTheme(theme);
         });
     }
+
     componentDidMount() {
         let token = localStorage.getItem("adal.idtoken");
         if (token) {
@@ -52,19 +54,18 @@ class AskHRTiles extends Component {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer ' + token
                 }
-            })
-                .then(response => response.json())
+            }).then(response => response.json())
                 .then(data => {
-                    if (data.length !== undefined) {
-                        if (data.length > 0) {
+                    if (data.entities.length !== undefined) {
+                        if (data.entities.length > 0) {
                             this.setState({
                                 noDataAvailableMessage: "",
-                                askHRTabData: data
+                                askHRTabData: data.entities
                             });
                             document.getElementById("root").style.display = "block";
                         }
                         else {
-                            this.setState({ noDataAvailableMessage: "My Team of Experts hasn't added anything here yet." });
+                            this.setState({ noDataAvailableMessage: "My Team of Experts hasn't added anything here yet."});
                             console.log(this.state.noDataAvailableMessage);
                         }
                     }
@@ -89,6 +90,16 @@ class AskHRTiles extends Component {
         }
     }
 
+    /**
+     * Set the culture direction according to given locale
+     * @param {any} locale Selected locale.
+     */
+    setCultureDirection(locale) {
+        i18next.init({ lng: locale });
+        var isRtl = i18next.dir(locale) === "rtl";
+        this.setState({ isCultureRightToLeft: isRtl });
+    }
+
     // Set the desired theme
     setTheme(theme) {
         if (theme) {
@@ -110,16 +121,16 @@ class AskHRTiles extends Component {
             askHRDataTile = data.
                 map(askHRData => {
                     num++;
-                    return <AskHRTile handleTelemetry={this.trackEventAskHR} key={num} AskHRData={askHRData} />;
+                    return <AskHRTile handleTelemetry={this.trackEventAskHR} key={num} AskHRData={askHRData} cultureInfo={this.state.isCultureRightToLeft} />;
                 });
         }
         else {
             askHRDataTile = <div id="noDataAvailableMsg" aria-live="polite" className="noDataDiv"> {this.state.noDataAvailableMessage}</div>;
         }
         return (
-            <React.Fragment>
+            <div className={this.state.isCultureRightToLeft ? "rtlAlign" : "ltrAlign"}>
                 {askHRDataTile}
-            </React.Fragment>
+            </div>
         );
     }
 }

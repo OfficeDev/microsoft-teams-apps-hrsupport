@@ -178,6 +178,33 @@ namespace Microsoft.Teams.Apps.AskHR.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ask an expert.
+        /// </summary>
+        public static string BotCommandAskAnExpert {
+            get {
+                return ResourceManager.GetString("BotCommandAskAnExpert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Share feedback.
+        /// </summary>
+        public static string BotCommandShare_Feedback {
+            get {
+                return ResourceManager.GetString("BotCommandShare Feedback", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Take a tour.
+        /// </summary>
+        public static string BotCommandTakeATour {
+            get {
+                return ResourceManager.GetString("BotCommandTakeATour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change status.
         /// </summary>
         public static string ChangeStatusButtonText {

@@ -5,9 +5,10 @@
 namespace Microsoft.Teams.Apps.AskHR.Cards
 {
     using System.Collections.Generic;
+    using System.Globalization;
     using AdaptiveCards;
     using Microsoft.Bot.Schema;
-    using Microsoft.Teams.Apps.AskHR.Bots;
+    using Microsoft.Teams.Apps.AskHR.Common;
     using Microsoft.Teams.Apps.AskHR.Models;
     using Microsoft.Teams.Apps.AskHR.Properties;
 
@@ -23,15 +24,17 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
         /// <returns>User welcome card.</returns>
         public static Attachment GetCard(string welcomeText)
         {
+            var textAlignment = CultureInfo.CurrentCulture.TextInfo.IsRightToLeft ? AdaptiveHorizontalAlignment.Right : AdaptiveHorizontalAlignment.Left;
+
             AdaptiveCard userWelcomeCard = new AdaptiveCard("1.0")
             {
                 Body = new List<AdaptiveElement>
                 {
                     new AdaptiveTextBlock
                     {
-                        HorizontalAlignment = AdaptiveHorizontalAlignment.Left,
                         Text = welcomeText,
-                        Wrap = true
+                        Wrap = true,
+                        HorizontalAlignment = textAlignment
                     }
                 },
                 Actions = new List<AdaptiveAction>
@@ -45,7 +48,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                             {
                               Type = ActionTypes.MessageBack,
                               DisplayText = Resource.TakeATourButtonText,
-                              Text = AskHRBot.TakeATour
+                              Text = Constants.TakeATour
                             }
                         },
                     }

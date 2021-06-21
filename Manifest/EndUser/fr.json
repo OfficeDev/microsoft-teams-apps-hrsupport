@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
+  "name.short": "Support RH",
+  "description.short": "Réponses et rencontre d’experts à l’aide d’un bot de support RH amical.",
+  "description.full": "Un aimable robot de questions-réponses. S'il ne trouve pas de réponse, il vous propose de vous mettre en contact avec un expert des ressources humaines.",
+  "staticTabs[0].name": "Support RH",
+  "bots[0].commandLists[0].commands[0].title": "Faites un tour",
+  "bots[0].commandLists[0].commands[0].description": "Visite guidée des principales fonctionnalités",
+  "bots[0].commandLists[0].commands[1].title": "Poser une question à un expert",
+  "bots[0].commandLists[0].commands[1].description": "Contacter un expert",
+  "bots[0].commandLists[0].commands[2].title": "Partager des commentaires",
+  "bots[0].commandLists[0].commands[2].description": "Envoyer des commentaires"
+}

@@ -144,6 +144,10 @@ You can ask the following questions:
     <value>Provide a valid knowledgebase Id which will be used by bot and then click on Ok to add or Edit to modify</value>
     <comment>Message for knowledgebase Id when information icon is hovered</comment>
   </data>
+  <data name="StaticTabHRSupport" xml:space="preserve">
+    <value>HR Support</value>
+    <comment>Static tab name</comment>
+  </data>
   <data name="TeamIdToolTipHoverMessage" xml:space="preserve">
     <value>Provide a team Id deeplink which will be used by bot and then click on Ok to add or Edit to modify</value>
     <comment>Message for team Id when information icon is hovered</comment>

@@ -108,6 +108,15 @@ namespace Microsoft.Teams.Apps.AskHR.Configuration {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to HR Support.
+        /// </summary>
+        public static string StaticTabHRSupport {
+            get {
+                return ResourceManager.GetString("StaticTabHRSupport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Provide a team Id deeplink which will be used by bot and then click on Ok to add or Edit to modify.
         /// </summary>
         public static string TeamIdToolTipHoverMessage {
